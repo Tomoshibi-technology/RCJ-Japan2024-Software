@@ -5,7 +5,6 @@ ControlP5 cp5;
 int slider1;
 
 Serial myPort;
-
 int available_serialport = 1; // シリアル検索プログラムで調べたシリアルポートの番号に変更
 String arduinoPort = Serial.list()[available_serialport]; //
 
