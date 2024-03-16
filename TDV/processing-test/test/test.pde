@@ -19,11 +19,11 @@ void setup() {
 
 	cp5.addSlider("slider1")
 		.setPosition(50,150)
-		.setSize(860,300)
-		// .setRange(0,255)
-		// .setValue(127)
-		.setRange(0,59)
-		.setValue(30)
+		.setSize(860,150)
+		.setRange(0,255)
+		.setValue(127)
+		// .setRange(0,59)
+		// .setValue(30)
 	;
 }
 
@@ -31,10 +31,11 @@ int count = 0;
 void draw() {
   count++;
 	if(count>=60)count-=60;
-	background(100);
+	colorMode( HSB ); 
+	background(slider1,200,250); // 背景色をスライダーの値に変更
 
-	fill(slider1);
-	rect(320,100,30,20);
+	// fill(slider1);
+	// rect(320,100,30,20);
 
 	if(count%3 == 0){ //20FPS
 		myPort.write(slider1);

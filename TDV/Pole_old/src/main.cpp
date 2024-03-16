@@ -140,6 +140,8 @@ void setup() {
 
 	pinMode(36, INPUT); //SENSOR_VP
 	pinMode(39, INPUT); //SENSOR_VN
+
+	pinMode(35, INPUT); //mic
 }
 
 
@@ -161,18 +163,25 @@ uint32_t C_tim = 0;
 uint8_t ledH = 0;
 uint8_t ledHigh = 59;
 
+uint8_t pre_mic_value = 0;
+
 void loop(){	
 	if(Serial.available()){
-		// ledH = Serial.read(); //色を変えたい時
-		ledHigh = Serial.read(); //高さを変えたい時
+		ledH = Serial.read(); //色を変えたい時
+		// ledHigh = Serial.read(); //高さを変えたい時
 		Serial.println(ledH);
 	}
+	int mic_value = analogRead(35)-1595; //0-2500
+	mic_value = mic_value*0.6 + pre_mic_value*0.4;
+
+	ledHigh = mic_value/42;
+	Serial.println(mic_value);
 
 	for(int i=0; i<4; i++) circuit_led[i].clear();
 	for(int i=0; i<6; i++) led[i].clear();
 
-	uint8_t S = 230;
-	uint8_t V = 25;
+	uint8_t S = 250;
+	uint8_t V = 50;
 	if(ledHigh>59) ledHigh = 59;
 	for(int n=0;n<60;n++){
 		if(n <= ledHigh){
@@ -180,8 +189,8 @@ void loop(){
 			for(int i=0;i<6;i++) led[i].set_color_hsv(n,ledH, S, V);
 		}else{
 			V=10;
-			for(int i=0;i<4;i++) circuit_led[i].set_color_hsv(n, ledH, 0, V);
-			for(int i=0;i<6;i++) led[i].set_color_hsv(n, ledH, 0, V);
+			for(int i=0;i<4;i++) circuit_led[i].set_color_hsv(n, ledH, 0, 5);
+			for(int i=0;i<6;i++) led[i].set_color_hsv(n, ledH, 0, 5);
 		}
 	}
 
