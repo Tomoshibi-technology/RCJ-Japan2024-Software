@@ -28,3 +28,12 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-03-19 13:28:39.458
 !MESSAGE Indexed 'Odometry' (24 sources, 156 headers) in 2.77 sec: 9,928 declarations; 39,305 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0041%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-19 14:00:04.936
+!MESSAGE Indexed 'Encoder' (0 sources, 0 headers) in 0.002 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-19 14:00:10.216
+!MESSAGE Indexed 'Encoder' (18 sources, 82 headers) in 2.45 sec: 3,967 declarations; 14,542 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.011%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-19 14:49:01.694
+!MESSAGE Indexed 'Encoder' (27 sources, 161 headers) in 3.01 sec: 11,875 declarations; 58,100 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0029%)
