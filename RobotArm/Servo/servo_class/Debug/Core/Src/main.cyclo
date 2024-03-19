@@ -1,0 +1,7 @@
+main.cpp:89:5:int main()	4
+main.cpp:168:6:void SystemClock_Config()	3
+main.cpp:210:13:void MX_USART2_UART_Init()	2
+main.cpp:243:13:void MX_GPIO_Init()	1
+main.cpp:274:6:void Error_Handler()	1
+main.cpp:283:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:283:1:cpp)	1
