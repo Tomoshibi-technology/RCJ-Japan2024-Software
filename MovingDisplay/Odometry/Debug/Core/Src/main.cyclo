@@ -1,0 +1,10 @@
+main.cpp:71:9:uint8_t readID()	6
+main.cpp:88:5:int main()	1
+main.cpp:140:6:void SystemClock_Config()	3
+main.cpp:177:13:void MX_I2C1_Init()	4
+main.cpp:225:13:void MX_USART2_UART_Init()	2
+main.cpp:259:13:void MX_DMA_Init()	1
+main.cpp:277:13:void MX_GPIO_Init()	1
+main.cpp:317:6:void Error_Handler()	1
+main.cpp:326:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:326:1:cpp)	1

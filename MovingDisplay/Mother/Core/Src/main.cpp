@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "m_transmit.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,6 +43,10 @@
 UART_HandleTypeDef huart6;
 
 /* USER CODE BEGIN PV */
+int travel1;
+int travel2;
+M_TRANSMIT odom1(&huart6,0);
+M_TRANSMIT odom2(&huart6,1);
 
 /* USER CODE END PV */
 
@@ -99,6 +103,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    travel1 = odom1.get_travel();
+    travel2 = odom2.get_travel();
   }
   /* USER CODE END 3 */
 }

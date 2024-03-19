@@ -21,6 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "as5600.h"
+#include "sdma_transmit.h"
 
 /* USER CODE END Includes */
 
@@ -47,6 +49,10 @@ UART_HandleTypeDef huart2;
 DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
+int my_ID;
+long travel = 0;
+
+AS5600 enc(&hi2c1);
 
 /* USER CODE END PV */
 
@@ -62,6 +68,16 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint8_t readID(){
+	uint8_t ID;
+	if(HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin)==1){ID=0;}
+	else if(HAL_GPIO_ReadPin(SW2_GPIO_Port, SW2_Pin)==1){ID=1;}
+	else if(HAL_GPIO_ReadPin(SW3_GPIO_Port, SW3_Pin)==1){ID=2;}
+	else if(HAL_GPIO_ReadPin(SW4_GPIO_Port, SW4_Pin)==1){ID=3;}
+	else if(HAL_GPIO_ReadPin(SW5_GPIO_Port, SW5_Pin)==1){ID=4;}
+	else{ID=5;}
+	return ID;
+}
 
 /* USER CODE END 0 */
 
@@ -97,6 +113,10 @@ int main(void)
   MX_I2C1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+  my_ID = readID();
+  SDMA_TRANSMIT toMother(&huart2, my_ID);
+  toMother.begin_dma();
 
   /* USER CODE END 2 */
 
@@ -105,6 +125,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    travel = enc.get_travel();
+    toMother.check_buf(travel);
 
     /* USER CODE BEGIN 3 */
   }
