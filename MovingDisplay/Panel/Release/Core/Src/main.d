@@ -31,7 +31,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h \
  ../Core/Inc/ws2812.h ../Core/Inc/main.h ../Core/Inc/led.h \
- ../Core/Inc/ws2812.h
+ ../Core/Inc/ws2812.h ../Core/Inc/sdma_transmit.h \
+ ../Core/Inc/stm32g0xx_hal_conf.h ../Core/Inc/stm32g0xx_it.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:
 ../Core/Inc/stm32g0xx_hal_conf.h:
@@ -68,3 +69,6 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Core/Inc/main.h:
 ../Core/Inc/led.h:
 ../Core/Inc/ws2812.h:
+../Core/Inc/sdma_transmit.h:
+../Core/Inc/stm32g0xx_hal_conf.h:
+../Core/Inc/stm32g0xx_it.h:

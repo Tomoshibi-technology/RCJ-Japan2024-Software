@@ -68,6 +68,10 @@ int go_speed = 50;
 int goal_travel_x = 0;
 
 uint8_t Error = 0;
+uint8_t test_array[9]={
+		220,0,50,5,50,7,50,3,120
+};
+int k = 0;
 
 /* USER CODE END PV */
 
@@ -172,7 +176,15 @@ int main(void)
 	  motor_D.calcurate(rotate, go_degree, go_speed);
 	  motor_D.set_array(Buf);
 
-	  HAL_UART_Transmit(&huart3, (uint8_t*)&Buf, 12, 100);
+	  test_array[1] = (k%10);
+	  k++;
+	  if(k>1000){
+		  k=0;
+	  }
+	  HAL_Delay(1);
+
+//	  HAL_UART_Transmit(&huart3, (uint8_t*)&Buf, 12, 100);
+	  HAL_UART_Transmit(&huart3,(uint8_t*)&test_array, 9, 100);
 
   }
   /* USER CODE END 3 */

@@ -1,6 +1,7 @@
-../Core/Src/main.cpp:70:6:void HAL_TIM_PWM_PulseFinishedHalfCpltCallback(TIM_HandleTypeDef*)	8	static
-../Core/Src/main.cpp:74:6:void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef*)	8	static
-../Core/Src/main.cpp:135:6:void SystemClock_Config()	88	static,ignoring_inline_asm
-../Core/Src/main.cpp:85:5:int main()	104	static,ignoring_inline_asm
-../Core/Src/main.cpp:327:6:void Error_Handler()	0	static,ignoring_inline_asm
-../Core/Src/main.cpp:336:1:cpp)	8	static
+../Core/Src/main.cpp:74:6:void HAL_TIM_PWM_PulseFinishedHalfCpltCallback(TIM_HandleTypeDef*)	8	static
+../Core/Src/main.cpp:78:6:void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef*)	8	static
+../Core/Src/main.cpp:82:9:uint8_t readID()	8	static
+../Core/Src/main.cpp:150:6:void SystemClock_Config()	88	static,ignoring_inline_asm
+../Core/Src/main.cpp:99:5:int main()	104	static,ignoring_inline_asm
+../Core/Src/main.cpp:354:6:void Error_Handler()	0	static,ignoring_inline_asm
+../Core/Src/main.cpp:363:1:cpp)	8	static
