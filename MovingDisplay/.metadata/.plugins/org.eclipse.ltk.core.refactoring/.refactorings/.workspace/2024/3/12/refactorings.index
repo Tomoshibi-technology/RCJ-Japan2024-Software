@@ -5,3 +5,5 @@
 1710931734710	Delete resource 'Panel_Test/Core/Inc/sk6812.h'
 1710935775809	Delete resource 'Panel_Test/Core/Src/ws2812.c'
 1710935781923	Delete resource 'Panel_Test/Core/Inc/ws2812.h'
+1710947133303	Delete resource 'Panel_Test/Core/Src/ws2812b.cpp'
+1710947139626	Delete resource 'Panel_Test/Core/Inc/ws2812b.h'

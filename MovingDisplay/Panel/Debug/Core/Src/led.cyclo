@@ -1,7 +1,9 @@
-led.cpp:3:1:LED::LED(WS2812B*)	1
-led.cpp:7:6:void LED::init()	1
-led.cpp:11:6:void LED::show(int, int, int)	3
-led.cpp:25:6:void LED::execute_NPX_execute()	1
-led.cpp:29:6:void LED::set_under()	1
-led.cpp:35:6:void LED::set_color(uint16_t)	1
-led.cpp:39:5:int LED::change_coord_to_num(int, int)	2
+led.cpp:3:1:LED::LED(WS2812*)	1
+led.cpp:7:6:void LED::init(uint8_t)	10
+led.cpp:22:6:void LED::show(int, int, int, int, int)	3
+led.cpp:37:6:void LED::set_circle(int, int, int, int, int, int)	2
+led.cpp:45:6:void LED::do_forwardRewrite()	1
+led.cpp:49:6:void LED::do_backRewrite()	1
+led.cpp:53:6:void LED::set_under()	1
+led.cpp:59:6:void LED::set_color(uint16_t)	1
+led.cpp:64:5:int LED::change_coord_to_num(int, int)	2

@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "ws2812b.h"
+#include "ws2812.h"
 #include "led.h"
 
 /* USER CODE END Includes */
@@ -49,8 +49,9 @@ UART_HandleTypeDef huart2;
 DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
-WS2812B Neopixel(&htim3, TIM_CHANNEL_2, &hdma_tim3_ch2);
+WS2812 Neopixel(&htim3, TIM_CHANNEL_2, &hdma_tim3_ch2);
 LED led(&Neopixel);
+float k=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,9 +66,24 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void HAL_TIM_PWM_PulseFinishedHalfCpltCallback(TIM_HandleTypeDef *htim) {
+	led.do_forwardRewrite();
+}
+
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim){
-	  // Neopixel.execute();
-    led.execute_NPX_execute();
+	led.do_backRewrite();
+}
+
+uint8_t readID(){
+	uint8_t ID = 0;
+	if(HAL_GPIO_ReadPin(SW3_GPIO_Port, SW3_Pin)==1){ID=0;}
+	else if(HAL_GPIO_ReadPin(SW4_GPIO_Port, SW4_Pin)==1){ID=1;}
+	else if(HAL_GPIO_ReadPin(SW5_GPIO_Port, SW5_Pin)==1){ID=2;}
+	if(HAL_GPIO_ReadPin(SW1_GPIO_Port, SW1_Pin)==1){ID=ID+3;}
+	else if(HAL_GPIO_ReadPin(SW2_GPIO_Port, SW2_Pin)==1){ID=ID+6;}
+	else{ID = ID;}
+	return ID;
 }
 
 /* USER CODE END 0 */
@@ -104,8 +120,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  // Neopixel.init();
-  led.init();
+  led.init(readID());
 
   /* USER CODE END 2 */
 
@@ -116,10 +131,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    // Neopixel.set_color(8, 3, 0, 0);
-    // Neopixel.show();
-    // HAL_Delay(500);
-     led.show(0,0,0);
+     led.show(0,sin(k)*5+16,sin(k)*5+16,6, 0);
+     k = k+0.1;
+     HAL_Delay(10);
   }
   /* USER CODE END 3 */
 }
@@ -307,11 +321,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : SW1_Pin */
+  GPIO_InitStruct.Pin = SW1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(SW1_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : SW2_Pin SW3_Pin SW4_Pin SW5_Pin */
+  GPIO_InitStruct.Pin = SW2_Pin|SW3_Pin|SW4_Pin|SW5_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
+
 
 /* USER CODE END 4 */
 

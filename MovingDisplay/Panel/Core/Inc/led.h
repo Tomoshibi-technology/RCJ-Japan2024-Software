@@ -1,22 +1,25 @@
 #pragma once
 #include "main.h"
 #include <stdint.h>
-#include "ws2812b.h"
+#include "ws2812.h"
+#include <math.h>
 
 class LED{
     private:
-    WS2812B* NEOPIXEL;
+    WS2812* NEOPIXEL;
     uint8_t red,green,blue;
-    #define PANEL_START_X 0
-    #define PANEL_START_Z 0
+    uint8_t PANEL_START_X;
+    uint8_t PANEL_START_Z;
+    int hue, sat, val;
 
     public:
-    LED(WS2812B* neopixel);
-    void init();
-    int change_coord_to_num(int px, int pz);
-    void execute_NPX_execute();
+    LED(WS2812* neopixel);
+    void init(uint8_t panel_id);
+    void do_forwardRewrite();
+    void do_backRewrite();
+    int change_coord_to_num(int px, int pz);;
     void set_under();
-    void set_circle(int x, int z, int cx, int cz);
+    void set_circle(int x, int z, int cx, int cz, int ro, int h);
     void set_color(uint16_t pixel_num);
-    void show(int travel_x, int circle_x, int circle_z);
+    void show(int travel_x, int circle_x, int circle_z, int circle_r, int hue);
 };
