@@ -69,6 +69,7 @@ double IR_rad = 0;
 double x_vec = 0;
 double y_vec = 0;
 int16_t angle = 0;
+uint8_t send_value = 0;
 
 
 
@@ -272,7 +273,11 @@ int main(void)
 		  y_vec += (IR_intensity[i] * sin(IR_rad));
 	  }
 	  angle = atan2(y_vec, x_vec) * 180 / 3.14;
-	  HAL_UART_Transmit(&huart2, &angle, 1, 50);
+	  if(angle < 0){
+		  angle += 360;
+	  }
+	  send_value = 100 + angle / 5;
+	  HAL_UART_Transmit(&huart2, &send_value, 1, 50);
 
 
 
