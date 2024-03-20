@@ -1,0 +1,6 @@
+../Core/Src/main.cpp:79:10:uint64_t readCounter()	0	static
+../Core/Src/main.cpp:84:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	0	static
+../Core/Src/main.cpp:154:6:void SystemClock_Config()	56	static,ignoring_inline_asm
+../Core/Src/main.cpp:96:5:int main()	72	static,ignoring_inline_asm
+../Core/Src/main.cpp:368:6:void Error_Handler()	0	static,ignoring_inline_asm
+../Core/Src/main.cpp:377:1:cpp)	8	static

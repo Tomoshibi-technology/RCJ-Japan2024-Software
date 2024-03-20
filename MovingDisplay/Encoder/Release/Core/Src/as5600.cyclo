@@ -1,0 +1,3 @@
+as5600.cpp:3:1:AS5600::AS5600(I2C_HandleTypeDef*)	1
+as5600.cpp:7:6:long int AS5600::get_travel()	7
+as5600.cpp:30:9:int16_t AS5600::get_speed(int16_t)	7

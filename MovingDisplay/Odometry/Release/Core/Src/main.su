@@ -1,0 +1,5 @@
+../Core/Src/main.cpp:71:9:uint8_t readID()	8	static
+../Core/Src/main.cpp:140:6:void SystemClock_Config()	56	static,ignoring_inline_asm
+../Core/Src/main.cpp:88:5:int main()	184	static,ignoring_inline_asm
+../Core/Src/main.cpp:317:6:void Error_Handler()	0	static,ignoring_inline_asm
+../Core/Src/main.cpp:326:1:cpp)	8	static

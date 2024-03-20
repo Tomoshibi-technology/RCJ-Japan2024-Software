@@ -1,0 +1,12 @@
+main.cpp:77:10:uint64_t readCounter()	1
+main.cpp:82:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	2
+main.cpp:94:5:int main()	1
+main.cpp:150:6:void SystemClock_Config()	3
+main.cpp:187:13:void MX_I2C1_Init()	4
+main.cpp:235:13:void MX_TIM3_Init()	4
+main.cpp:280:13:void MX_USART2_UART_Init()	2
+main.cpp:314:13:void MX_DMA_Init()	1
+main.cpp:332:13:void MX_GPIO_Init()	1
+main.cpp:364:6:void Error_Handler()	1
+main.cpp:373:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:373:1:cpp)	1

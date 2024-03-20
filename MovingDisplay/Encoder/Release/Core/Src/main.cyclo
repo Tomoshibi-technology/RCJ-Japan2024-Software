@@ -1,0 +1,6 @@
+main.cpp:79:10:uint64_t readCounter()	1
+main.cpp:84:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	2
+main.cpp:154:6:void SystemClock_Config()	3
+main.cpp:96:5:int main()	8
+main.cpp:368:6:void Error_Handler()	1
+main.cpp:377:1:cpp)	1

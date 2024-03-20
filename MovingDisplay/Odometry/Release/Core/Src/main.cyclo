@@ -1,0 +1,5 @@
+main.cpp:71:9:uint8_t readID()	5
+main.cpp:140:6:void SystemClock_Config()	3
+main.cpp:88:5:int main()	5
+main.cpp:317:6:void Error_Handler()	1
+main.cpp:326:1:cpp)	1
