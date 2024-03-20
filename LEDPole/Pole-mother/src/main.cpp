@@ -14,7 +14,7 @@ HardwareSerial POLE(PC7, PC6);
 
 
 #include "./twelite/twelite.h"
-HardwareSerial TWE(PA1, PA0); //UART2 RX, TX
+HardwareSerial TWE(PD2, PC12); //UART2 RX, TX
 TWELITE twelite(&TWE);
 
 

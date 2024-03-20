@@ -20,21 +20,31 @@ uint8_t re_from_adrs; //送信元のアドレス
 
 
 //ピン
-const uint8_t DIP0= mwx::PIN_DIGITAL::DIO13; //adrs1
-const uint8_t DIP1= mwx::PIN_DIGITAL::DIO16; //adrs2
-const uint8_t LED0= mwx::PIN_DIGITAL::DIO9; 
-const uint8_t LED1= mwx::PIN_DIGITAL::DIO8; 
+const uint8_t DIP0= mwx::PIN_DIGITAL::DIO5; //adrs1
+const uint8_t DIP1= mwx::PIN_DIGITAL::DIO9; //adrs2
+const uint8_t DIP2= mwx::PIN_DIGITAL::DIO8; //adrs3
+const uint8_t DIP3= mwx::PIN_DIGITAL::DIO10; //adrs4
+const uint8_t DIP4= mwx::PIN_DIGITAL::DIO13; //adrs5
 
-uint8_t my_adrs; //自分のアドレス
+const uint8_t LED0= mwx::PIN_DIGITAL::DIO17; 
+const uint8_t LED1= mwx::PIN_DIGITAL::DIO16; 
+
+uint8_t my_adrs=0; //自分のアドレス
 
 void setup() {	
 	//ーーーーーID読み取りーーーーー
 	pinMode(DIP0,INPUT);
 	pinMode(DIP1,INPUT);
+	pinMode(DIP2,INPUT);
+	pinMode(DIP3,INPUT);
+	pinMode(DIP4,INPUT);
 	pinMode(LED0,OUTPUT);
 	pinMode(LED1,OUTPUT);
 	delay(10);
 	my_adrs += 0xA0;//子機のアドレスを計算
+	my_adrs += digitalRead(DIP4) << 4;//子機のアドレスを計算
+	my_adrs += digitalRead(DIP3) << 3;//子機のアドレスを計算
+	my_adrs += digitalRead(DIP2) << 2;//子機のアドレスを計算
 	my_adrs += digitalRead(DIP1) << 1;//子機のアドレスを計算
 	my_adrs += digitalRead(DIP0); //子機のアドレスを計算
 	digitalWrite(LED0,digitalRead(DIP0));

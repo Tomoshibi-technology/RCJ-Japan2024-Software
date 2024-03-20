@@ -20,8 +20,8 @@ uint8_t se_from_adrs; //送信元のアドレス 自分のアドレス
 uint8_t my_adrs = 0x00; //自分のアドレス
 
 
-const uint8_t LED0= mwx::PIN_DIGITAL::DIO9; 
-const uint8_t LED1= mwx::PIN_DIGITAL::DIO8; 
+const uint8_t LED0= mwx::PIN_DIGITAL::DIO17; 
+const uint8_t LED1= mwx::PIN_DIGITAL::DIO16; 
 
 
 void setup() {
@@ -29,14 +29,16 @@ void setup() {
 	pinMode(LED1,OUTPUT);
 
 	//ーーーーー通信設定ーーーーー
-	txreq_stat = MWX_APIRET(false,0);
+	txreq_stat = MWX_APIRET(false,0); //コンストラクタ
 
 	the_twelite
 		<< TWENET::appid(APP_ID)    
-		<< TWENET::channel(CHANNEL) 
-		<< TWENET::rx_when_idle();      
+		<< TWENET::channel(CHANNEL)
+		<< TWENET::tx_power(3) // 0:最低 3:最大
+		<< TWENET::rx_when_idle(0); //送信専用　受信回路停止 
 	auto&&	nwksmpl = the_twelite.network.use<NWK_SIMPLE>();
-					nwksmpl << NWK_SIMPLE::logical_id(my_adrs);
+	nwksmpl << NWK_SIMPLE::logical_id(my_adrs);
+	
 	the_twelite.begin();
 
 	// //ーーーーーー有線通信設定ーーーーーー
@@ -58,10 +60,12 @@ uint16_t send_i = 0;
 uint8_t receive_data[4] = {0,0,0,0};
 void loop() {
 	//ここからシリアル受信
+	Serial << format("[%d]", Serial1.read()) << mwx::crlf << mwx::flush;
+	delay(10);
 
 	while(Serial1.available()) {
 		uint8_t data = Serial1.read();
-		Serial << format("[%d]", data) << mwx::crlf << mwx::flush;;
+		// Serial << format("[%d]", data) << mwx::crlf << mwx::flush;;
 		if(data == (uint8_t)250){
 			uint8_t raw_receive_data[4] = {0,0,0,0};
 			bool receive_bad_flg = false;
@@ -80,9 +84,9 @@ void loop() {
 			if(!receive_bad_flg){
 				for(int i=0; i<4; i++){
 					receive_data[i] = raw_receive_data[i];
-					Serial << format("  %d  ", receive_data[i]);
+					// Serial << format("  %d  ", receive_data[i]);
 				}
-				Serial << mwx::crlf << mwx::flush;
+				// Serial << mwx::crlf << mwx::flush;
 			}
 			break;
 		}
@@ -91,7 +95,7 @@ void loop() {
 	//Serial << format("[%d]", data) << crlf;
 
 	//ここまで
-	se_data[0] = receive_data[0]; //10 + (send_i%200);
+	se_data[0] = receive_data[0];//10 + (send_i%200);
 	se_data[1] = receive_data[1];//20 + (send_i%200);
 	se_data[2] = receive_data[2];//30 + (send_i%200);
 	se_data[3] = receive_data[3];//40 + (send_i%200);
@@ -157,9 +161,10 @@ MWX_APIRET transmit() {
 		// 				<< mwx::crlf << mwx::flush;
 
 		pkt << tx_addr(se_to_adrs) 
-				<< tx_retry(0x2) //送信トライ回数
-				<< tx_packet_delay(0,0,2);	//最低待ち時間、最長待ち時間、再送間隔
+				<< tx_retry(0x0) //送信トライ回数
+				<< tx_packet_delay(0,0,0);	//最低待ち時間、最長待ち時間、再送間隔
 																		//直ちに再送、2ms待って再送
+		tx_process_immediate(); //できるだけ速やかに送信
 
 		pack_bytes(
 			pkt.get_payload(),

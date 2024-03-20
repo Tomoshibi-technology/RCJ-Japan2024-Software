@@ -68,7 +68,7 @@ void loop() {
 	for(int i=0;i<116;i++){
 		tape_led[0].setPixel_hsv(i, ser_ctrl.data[0], 250, 100);
 		tape_led[1].setPixel_hsv(i, ser_ctrl.data[0], 250, 100);
-		tape_led[2].setPixel_hsv(i, ser_ctrl.data[0], 250, 100);
+		tape_led[2].setPixel_hsv(i, ser_ctrl.data[7], 250, 100);
 	}
 
 	for(int i=0; i<3; i++){
