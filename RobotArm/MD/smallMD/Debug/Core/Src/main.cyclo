@@ -1,0 +1,17 @@
+main.c:115:6:exe_motor	4
+main.c:130:6:DMA_read	5
+main.c:149:10:readCounter	1
+main.c:152:6:HAL_TIM_PeriodElapsedCallback	2
+main.c:157:6:get_ID	4
+main.c:166:6:unzip	1
+main.c:170:6:calc_angle	1
+main.c:175:6:move	4
+main.c:204:5:main	4
+main.c:293:6:SystemClock_Config	3
+main.c:334:13:MX_TIM1_Init	7
+main.c:416:13:MX_TIM3_Init	6
+main.c:475:13:MX_TIM14_Init	2
+main.c:506:13:MX_USART2_UART_Init	2
+main.c:540:13:MX_DMA_Init	1
+main.c:558:13:MX_GPIO_Init	1
+main.c:592:6:Error_Handler	1

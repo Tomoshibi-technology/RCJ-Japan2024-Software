@@ -1,0 +1,9 @@
+main.c:84:10:time_counter	1
+main.c:88:6:HAL_TIM_PeriodElapsedCallback	2
+main.c:94:6:exe_IR	5
+main.c:139:5:main	1
+main.c:209:6:SystemClock_Config	3
+main.c:250:13:MX_TIM1_Init	4
+main.c:297:13:MX_TIM3_Init	9
+main.c:368:13:MX_GPIO_Init	1
+main.c:389:6:Error_Handler	1
