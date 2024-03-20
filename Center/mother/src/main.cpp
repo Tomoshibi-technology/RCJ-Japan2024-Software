@@ -40,14 +40,14 @@ void loop() {
 	// control_send_data[2] = byte(start_frg*150 + 50);
 	// control_send_data[3] = byte(mode + 5);
 	twelite.send(control_send_data);
-	delay(30);
+	delay(50);
 
-	PC.print("send ");
-	PC.print(control_send_data[0]);
-	PC.print(" ");
-	PC.print(control_send_data[1]);
-	PC.print(" ");
-	PC.print(control_send_data[2]);
-	PC.print(" ");
-	PC.println(control_send_data[3]);
+	// PC.print("send ");
+	// PC.print(control_send_data[0]);
+	// PC.print(" ");
+	// PC.print(control_send_data[1]);
+	// PC.print(" ");
+	// PC.print(control_send_data[2]);
+	// PC.print(" ");
+	// PC.println(control_send_data[3]);
 }

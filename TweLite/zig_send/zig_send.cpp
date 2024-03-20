@@ -61,7 +61,7 @@ uint8_t receive_data[4] = {0,0,0,0};
 void loop() {
 	//ここからシリアル受信
 	Serial << format("[%d]", Serial1.read()) << mwx::crlf << mwx::flush;
-	delay(10);
+	delay(50);
 
 	while(Serial1.available()) {
 		uint8_t data = Serial1.read();
@@ -72,7 +72,8 @@ void loop() {
 			for(int i=0; i<4; i++){
 				if(Serial1.available()){
 					raw_receive_data[i] = Serial1.read();
-					if(raw_receive_data[i] == (uint8_t)250||raw_receive_data[i] == (uint8_t)0){
+					// if(raw_receive_data[i] == (uint8_t)250||raw_receive_data[i] == (uint8_t)0){
+					if(raw_receive_data[i] == (uint8_t)250){
 						receive_bad_flg = true;
 						break;
 					}

@@ -28,6 +28,7 @@ const uint8_t DIP4= mwx::PIN_DIGITAL::DIO13; //adrs5
 
 const uint8_t LED0= mwx::PIN_DIGITAL::DIO17; 
 const uint8_t LED1= mwx::PIN_DIGITAL::DIO16; 
+const uint8_t LED2= mwx::PIN_DIGITAL::DIO11;
 
 uint8_t my_adrs=0; //自分のアドレス
 
@@ -40,6 +41,7 @@ void setup() {
 	pinMode(DIP4,INPUT);
 	pinMode(LED0,OUTPUT);
 	pinMode(LED1,OUTPUT);
+	pinMode(LED2,OUTPUT);
 	delay(10);
 	my_adrs += 0xA0;//子機のアドレスを計算
 	my_adrs += digitalRead(DIP4) << 4;//子機のアドレスを計算
@@ -76,23 +78,27 @@ void loop() {
 	while (the_twelite.receiver.available()) { //受信待ち 受信したデータがなくなるまで繰り返す
 		//Serial << "kita";
 		receive();
-		Serial 	<< "re_fr:" << format("0x%X", re_from_adrs) //送信元のアドレス 16進数で表示してます
-						<< "  data: " << (int)re_data[0]
-						<< " : " << (int)re_data[1]
-						<< " : " << (int)re_data[2]
-						<< " : " << (int)re_data[3]
-						<< mwx::crlf << mwx::flush;
-	}
-	if(TickTimer.available()){ //1msごとに実行
-		mytimer++;
-	}
-	if(mytimer >= 10){//10msごとに実行
+		// Serial 	<< "re_fr:" << format("0x%X", re_from_adrs) //送信元のアドレス 16進数で表示してます
+		// 				<< "  data: " << (int)re_data[0]
+		// 				<< " : " << (int)re_data[1]
+		// 				<< " : " << (int)re_data[2]
+		// 				<< " : " << (int)re_data[3]
+		// 				<< mwx::crlf << mwx::flush;
 		Serial1 << (byte)250; //スタートビット
 		for(int dataId=0;dataId<4;dataId++){
 			Serial1 << (byte)re_data[dataId];
 		}
-		mytimer = 0;
 	}
+	if(TickTimer.available()){ //1msごとに実行
+		mytimer++;
+	}
+	// if(mytimer >= 10){//10msごとに実行
+	// 	Serial1 << (byte)250; //スタートビット
+	// 	for(int dataId=0;dataId<4;dataId++){
+	// 		Serial1 << (byte)re_data[dataId];
+	// 	}
+	// 	mytimer = 0;
+	// }
 
 	//ーーーーーF446送信ーーーーー
 	// Serial1 << (byte)250; //スタートビット
@@ -100,6 +106,7 @@ void loop() {
 	// 	Serial1 << (byte)re_data[i];
 	// }
 	// Serial1 << mwx::flush;
+	// delay(20);
 }
 
 /*add function recive()*/
