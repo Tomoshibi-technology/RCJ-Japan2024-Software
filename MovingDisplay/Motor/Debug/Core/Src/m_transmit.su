@@ -1,0 +1,2 @@
+../Core/Src/m_transmit.cpp:3:1:M_TRANSMIT::M_TRANSMIT(UART_HandleTypeDef*, uint8_t)	24	static
+../Core/Src/m_transmit.cpp:9:5:int M_TRANSMIT::get_speed()	32	static

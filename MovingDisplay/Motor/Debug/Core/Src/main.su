@@ -1,0 +1,11 @@
+../Core/Src/main.cpp:74:9:uint8_t readID()	16	static
+../Core/Src/main.cpp:91:5:int main()	152	static
+../Core/Src/main.cpp:175:6:void SystemClock_Config()	88	static
+../Core/Src/main.cpp:216:13:void MX_TIM16_Init()	88	static
+../Core/Src/main.cpp:279:13:void MX_USART1_UART_Init()	8	static
+../Core/Src/main.cpp:327:13:void MX_USART2_UART_Init()	8	static
+../Core/Src/main.cpp:361:13:void MX_DMA_Init()	16	static
+../Core/Src/main.cpp:379:13:void MX_GPIO_Init()	48	static
+../Core/Src/main.cpp:430:6:void Error_Handler()	8	static,ignoring_inline_asm
+../Core/Src/main.cpp:439:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../Core/Src/main.cpp:439:1:cpp)	8	static

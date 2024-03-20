@@ -1,7 +1,10 @@
-main.cpp:70:5:int main()	1
-main.cpp:116:6:void SystemClock_Config()	3
-main.cpp:158:13:void MX_USART6_UART_Init()	2
-main.cpp:191:13:void MX_GPIO_Init()	1
-main.cpp:211:6:void Error_Handler()	1
-main.cpp:220:1:void __static_initialization_and_destruction_0(int, int)	3
-main.cpp:220:1:cpp)	1
+main.cpp:93:5:int main()	7
+main.cpp:185:6:void SystemClock_Config()	3
+main.cpp:232:13:void MX_I2C1_Init()	2
+main.cpp:266:13:void MX_USART3_UART_Init()	2
+main.cpp:299:13:void MX_USART6_UART_Init()	2
+main.cpp:332:13:void MX_GPIO_Init()	1
+main.cpp:365:6:void Error_Handler()	1
+cmath:155:5:constexpr typename __gnu_cxx::__promote_2<_Tp, _Up>::__type std::atan2(_Tp, _Up) [with _Tp = int; _Up = int]	1
+main.cpp:374:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:374:1:cpp)	1
