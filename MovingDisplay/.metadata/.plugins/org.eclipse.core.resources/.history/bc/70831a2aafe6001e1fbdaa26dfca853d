@@ -1,0 +1,27 @@
+/*
+ * ws2812.cpp
+ *
+ *  Created on: Mar 20, 2024
+ *      Author: famil
+ */
+
+#include "ws2812.h"
+
+
+
+void show(){
+//    if(wr_buf_p != 0 || hdma_tim3_ch2.State != HAL_DMA_STATE_READY){
+        // HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_2);
+        wr_buf_p = 0;
+        for(uint8_t i=0; i <48; i++){wr_buf[i] = 0;}
+//    }
+    for(uint_fast8_t i = 0; i < 8; i++){
+        wr_buf[i  ] = ((rgb_buf[0][1]>>(7-i))&1)?HIGH:LOW;
+        wr_buf[i+8] = ((rgb_buf[0][2]>>(7-i))&1)?HIGH:LOW;
+        wr_buf[i+16] = ((rgb_buf[0][3]>>(7-i))&1)?HIGH:LOW;
+    }
+}
+
+
+
+

@@ -1,0 +1,5 @@
+main.cpp:68:6:void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef*)	1
+main.cpp:131:6:void SystemClock_Config()	3
+main.cpp:79:5:int main()	7
+main.cpp:322:6:void Error_Handler()	1
+main.cpp:331:1:cpp)	1

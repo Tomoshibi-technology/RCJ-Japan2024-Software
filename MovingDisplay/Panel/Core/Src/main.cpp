@@ -22,6 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "ws2812b.h"
+#include "led.h"
 
 /* USER CODE END Includes */
 
@@ -49,8 +50,7 @@ DMA_HandleTypeDef hdma_usart2_rx;
 
 /* USER CODE BEGIN PV */
 WS2812B Neopixel(&htim3, TIM_CHANNEL_2, &hdma_tim3_ch2);
-
-int k=0;
+LED led(&Neopixel);
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,7 +66,8 @@ static void MX_TIM3_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim){
-	  Neopixel.execute();
+	  // Neopixel.execute();
+    led.execute_NPX_execute();
 }
 
 /* USER CODE END 0 */
@@ -103,7 +104,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  Neopixel.init();
+  // Neopixel.init();
+  led.init();
 
   /* USER CODE END 2 */
 
@@ -114,9 +116,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    Neopixel.set_color(8, 3, 0, 0);
-    Neopixel.show();
-    HAL_Delay(500);
+    // Neopixel.set_color(8, 3, 0, 0);
+    // Neopixel.show();
+    // HAL_Delay(500);
+     led.show(0,0,0);
   }
   /* USER CODE END 3 */
 }

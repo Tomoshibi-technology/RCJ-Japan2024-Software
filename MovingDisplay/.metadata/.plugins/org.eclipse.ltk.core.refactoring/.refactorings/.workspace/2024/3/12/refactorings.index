@@ -1,3 +1,7 @@
 1710828523038	Delete resource 'Motor'
 1710835597851	Delete resource 'Motor/Core/Src/main.c'
 1710852355795	Delete resource 'Mother/Core/Src/main.c'
+1710931727308	Delete resource 'Panel_Test/Core/Src/sk6812.c'
+1710931734710	Delete resource 'Panel_Test/Core/Inc/sk6812.h'
+1710935775809	Delete resource 'Panel_Test/Core/Src/ws2812.c'
+1710935781923	Delete resource 'Panel_Test/Core/Inc/ws2812.h'

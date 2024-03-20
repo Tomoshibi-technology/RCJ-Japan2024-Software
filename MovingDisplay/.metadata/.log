@@ -194,3 +194,45 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-03-20 16:22:41.996
 !MESSAGE Indexed 'Panel' (20 sources, 83 headers) in 3.32 sec: 4,282 declarations; 17,698 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-20 18:59:10.750
+!MESSAGE Indexed 'Panel' (26 sources, 131 headers) in 3.02 sec: 9,057 declarations; 50,986 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-20 19:03:42.399
+!MESSAGE Indexed 'Panel' (26 sources, 131 headers) in 2.42 sec: 9,056 declarations; 50,986 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-20 19:20:30.032
+!MESSAGE Indexed 'Panel' (26 sources, 131 headers) in 1.9 sec: 9,056 declarations; 50,986 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-20 19:26:15.391
+!MESSAGE Indexed 'Panel_Test' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-03-20 19:26:18.463
+!MESSAGE Indexed 'Panel_Test' (20 sources, 83 headers) in 1.82 sec: 4,282 declarations; 17,698 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2024-03-20 19:36:12.663
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2024-03-20 19:36:28.136
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.cdt.ui 4 0 2024-03-20 21:21:12.139
+!MESSAGE Error in CDT UI during reconcile
+!STACK 1
+C Model Exception: C Model Status [Element main.c does not exist.]
+	at org.eclipse.cdt.internal.core.model.CElement.newNotPresentException(CElement.java:485)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.makeConsistent(TranslationUnit.java:583)
+	at org.eclipse.cdt.internal.core.model.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:65)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.execute(CModelOperation.java:346)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.run(CModelOperation.java:613)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:641)
+	at org.eclipse.cdt.internal.core.model.WorkingCopy.reconcile(WorkingCopy.java:365)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:79)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:64)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:89)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:346)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+!SUBENTRY 1 org.eclipse.cdt.core 4 969 2024-03-20 21:21:12.143
+!MESSAGE Element main.c does not exist.

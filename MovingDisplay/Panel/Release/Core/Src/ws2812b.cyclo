@@ -1,0 +1,6 @@
+ws2812b.cpp:3:1:WS2812B::WS2812B(TIM_HandleTypeDef*, uint32_t, DMA_HandleTypeDef*)	1
+ws2812b.cpp:9:6:void WS2812B::set_color(uint16_t, uint8_t, uint8_t, uint8_t)	2
+ws2812b.cpp:17:6:void WS2812B::show()	1
+ws2812b.cpp:21:6:void WS2812B::execute()	7
+ws2812b.cpp:49:6:void WS2812B::init()	1
+ws2812b.cpp:61:6:void WS2812B::clear()	2

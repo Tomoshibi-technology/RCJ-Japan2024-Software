@@ -1,0 +1,11 @@
+main.c:75:6:set_color	1
+main.c:81:6:clear	2
+main.c:90:6:show	5
+main.c:109:6:HAL_TIM_PWM_PulseFinishedHalfCpltCallback	8
+main.c:124:6:HAL_TIM_PWM_PulseFinishedCallback	8
+main.c:147:5:main	2
+main.c:203:6:SystemClock_Config	3
+main.c:247:13:MX_TIM3_Init	6
+main.c:304:13:MX_DMA_Init	1
+main.c:322:13:MX_GPIO_Init	1
+main.c:343:6:Error_Handler	1
