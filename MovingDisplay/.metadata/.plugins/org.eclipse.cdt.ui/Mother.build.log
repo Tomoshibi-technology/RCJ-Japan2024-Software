@@ -1,21 +1,10 @@
-15:59:18 **** Incremental Build of configuration Debug for project Mother ****
+16:16:34 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:143:14: warning: unused variable 'q' [-Wunused-variable]
-  143 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
 arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
   27152	    132	   1904	  29188	   7204	Mother.elf
 Finished building: default.size.stdout
  
-Finished building: Mother.list
- 
 
-15:59:19 Build Finished. 0 errors, 1 warnings. (took 1s.243ms)
+16:16:35 Build Finished. 0 errors, 0 warnings. (took 372ms)
 

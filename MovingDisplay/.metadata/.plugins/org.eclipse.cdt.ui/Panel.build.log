@@ -1,0 +1,17 @@
+17:55:18 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m0plus -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G030xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "Panel.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\robot\Japan2024-Software\MovingDisplay\Panel\STM32G030K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Panel.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Panel.elf
+ 
+arm-none-eabi-size   Panel.elf 
+arm-none-eabi-objdump -h -S  Panel.elf  > "Panel.list"
+   text	   data	    bss	    dec	    hex	filename
+  16196	     24	   2652	  18872	   49b8	Panel.elf
+Finished building: default.size.stdout
+ 
+Finished building: Panel.list
+ 
+
+17:55:20 Build Finished. 0 errors, 0 warnings. (took 1s.293ms)
+

@@ -1,0 +1,10 @@
+../Core/Src/main.cpp:68:6:void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef*)	16	static
+../Core/Src/main.cpp:78:5:int main()	16	static
+../Core/Src/main.cpp:128:6:void SystemClock_Config()	88	static
+../Core/Src/main.cpp:172:13:void MX_TIM3_Init()	64	static
+../Core/Src/main.cpp:231:13:void MX_USART2_UART_Init()	8	static
+../Core/Src/main.cpp:265:13:void MX_DMA_Init()	16	static
+../Core/Src/main.cpp:286:13:void MX_GPIO_Init()	48	static
+../Core/Src/main.cpp:319:6:void Error_Handler()	8	static,ignoring_inline_asm
+../Core/Src/main.cpp:328:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../Core/Src/main.cpp:328:1:cpp)	8	static

@@ -54,7 +54,7 @@ int travel_y, yf;
 M_TRANSMIT odom1(&huart6,0);
 M_TRANSMIT odom2(&huart6,1);
 
-uint8_t ready=0;
+uint8_t ready = 0 ;
 float rotate;
 
 MOVE motor_A(0, 45);
