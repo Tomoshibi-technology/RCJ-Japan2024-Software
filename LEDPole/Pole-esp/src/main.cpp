@@ -62,13 +62,13 @@ void loop() {
 
 	circuit_led.setBrightness(250);
 	for(int i=0; i<10; i++){
-		circuit_led.setPixel_hsv(i, 30, 250, 100);
+		circuit_led.setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
 	}
 
 	for(int i=0;i<116;i++){
-		tape_led[0].setPixel_hsv(i, ser_ctrl.data[0], 250, 100);
-		tape_led[1].setPixel_hsv(i, ser_ctrl.data[0], 250, 100);
-		tape_led[2].setPixel_hsv(i, ser_ctrl.data[7], 250, 100);
+		tape_led[0].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
+		tape_led[1].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
+		tape_led[2].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
 	}
 
 	for(int i=0; i<3; i++){

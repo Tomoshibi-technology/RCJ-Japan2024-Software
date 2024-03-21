@@ -31,10 +31,44 @@ void setup() {
 }
 
 int i=0;
+byte data[4] = {0,0,0,0};
+
+
 void loop() {
 	i++; if(i>255)i=5;
 
-	byte control_send_data[4] = {i-4, i-3, i-2, i-1};
+	while(PC.available()>20){
+		byte mydata = PC.read();
+	}
+	while(PC.available()){
+		byte mydata = PC.read();
+		// PC.write(mydata); // テスト用
+		if(mydata == 250){			
+			byte raw_data[4] = {0,0,0,0};
+			bool receive_bag_flag = 0;
+
+			for(int i=0; i<4; i++){
+				if(PC.available()){
+					raw_data[i] = PC.read();
+					if(raw_data[i] == 250){
+						receive_bag_flag = 1;
+						break;
+					}
+				}else{
+					receive_bag_flag = 1;
+					break;
+				}
+			}
+			if(!receive_bag_flag){
+				for(int i=0; i<4; i++){
+					data[i] = raw_data[i];
+				}
+			}
+		}
+	}
+
+
+	byte control_send_data[4] = {data[0], data[1], data[2], data[3]};
 	// control_send_data[0] = byte(time_cnt % 240 +5);
 	// control_send_data[1] = byte(time_cnt / 240 +5);
 	// control_send_data[2] = byte(start_frg*150 + 50);
