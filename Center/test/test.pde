@@ -11,14 +11,14 @@ import ddf.minim.ugens.*;
 AudioPlayer player;
 Minim minim;
 
-String title = "Faint_Dream.mp3";
-String title2 = "LostSky-Fearless.mp3";
+String title2 = "Faint_Dream.mp3";
+String title = "LostSky-Fearless.mp3";
 float effect = 0; //波形にエフェクトをかける
 float line = 0;
 float left;
 
 
-ControlP5 cp5;
+ControlP5 cp5; 
 int slider1;
 boolean toggle1 = false;
 
@@ -31,7 +31,7 @@ void setup() {
 	printArray(Serial.list());
 
 	size(960,540);
-  frameRate(60);
+  frameRate(66);
 
 	myPort = new Serial(this, arduinoPort, 115200); // シリアルポートの設定
 	cp5 = new ControlP5(this);
@@ -72,19 +72,19 @@ void draw() {
 	if(toggle1){
 
     fill(color(255));
-		if(count%6 == 0){
+		if(count%9 == 0){
 			time_count++;
+			print("time_count: ");
+			println(time_count);
+			if((time_count+7)%8==0)println("---------------------------------------------");
 		}
   }else{
 		fill(color(128));
 	}
   rect(180,80,20,20);
 	
-	print("count: ");
-	print(count);
-	print("time_count: ");
-	println(time_count);
-	
+	// print("count: ");
+	// print(count);	
 
 	if(count%3 == 0){ //20FPS
 		myPort.write(250);
