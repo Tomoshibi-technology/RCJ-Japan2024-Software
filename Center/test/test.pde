@@ -25,8 +25,6 @@ int slider1;
 boolean toggle1 = false;
 
 Serial myPort;
-int available_serialport = 1; // シリアル検索プログラムで調べたシリアルポートの番号に変更
-String arduinoPort = Serial.list()[available_serialport]; //
 
 
 void setup() {
@@ -35,6 +33,8 @@ void setup() {
 	size(960,540);
   frameRate(66);
 
+	int available_serialport = 1; // シリアル検索プログラムで調べたシリアルポートの番号に変更s
+	String arduinoPort = Serial.list()[available_serialport];
 	myPort = new Serial(this, arduinoPort, 115200); // シリアルポートの設定
 	cp5 = new ControlP5(this);
 
