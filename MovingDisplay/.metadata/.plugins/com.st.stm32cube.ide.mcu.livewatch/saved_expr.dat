@@ -5,3 +5,10 @@ travel_y
 goal_travel_x
 Buf
 array_num
+mode
+index
+mode
+clock
+hue
+rcvBuf
+send_array

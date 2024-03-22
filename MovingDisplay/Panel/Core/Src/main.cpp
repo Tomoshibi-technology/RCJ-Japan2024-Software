@@ -54,7 +54,7 @@ WS2812 Neopixel(&htim3, TIM_CHANNEL_2, &hdma_tim3_ch2);
 LED led(&Neopixel);
 SDMA_TRANSMIT fromMother(&huart2,0);
 float k=0;
-int out_hue;
+int out_hue1, out_hue2;
 int id;
 
 /* USER CODE END PV */
@@ -138,9 +138,11 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     fromMother.check_buf();
-    out_hue = 2.5 * fromMother.in_hue;
-    if(out_hue>=255){out_hue = 255;}
-     led.show(fromMother.travel_x, fromMother.circle_x, fromMother.circle_z, fromMother.radius, out_hue);
+    out_hue1 = 2.5 * fromMother.in_hue1;
+    if(out_hue1>=255){out_hue1 = 255;}
+    out_hue2 = 2.5 * fromMother.in_hue2;
+    if(out_hue2>=255){out_hue2 = 255;}
+     led.show(fromMother.travel_x, fromMother.circle_x, fromMother.circle_z, fromMother.radius, out_hue1, out_hue2);
 //     HAL_Delay(10);
   }
   /* USER CODE END 3 */

@@ -1,12 +1,12 @@
 main.cpp:75:6:void HAL_TIM_PWM_PulseFinishedHalfCpltCallback(TIM_HandleTypeDef*)	1
 main.cpp:79:6:void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef*)	1
 main.cpp:83:9:uint8_t readID()	6
-main.cpp:100:5:int main()	2
-main.cpp:153:6:void SystemClock_Config()	3
-main.cpp:197:13:void MX_TIM3_Init()	6
-main.cpp:256:13:void MX_USART2_UART_Init()	2
-main.cpp:290:13:void MX_DMA_Init()	1
-main.cpp:311:13:void MX_GPIO_Init()	1
-main.cpp:357:6:void Error_Handler()	1
-main.cpp:366:1:void __static_initialization_and_destruction_0(int, int)	3
-main.cpp:366:1:cpp)	1
+main.cpp:100:5:int main()	3
+main.cpp:155:6:void SystemClock_Config()	3
+main.cpp:199:13:void MX_TIM3_Init()	6
+main.cpp:258:13:void MX_USART2_UART_Init()	2
+main.cpp:292:13:void MX_DMA_Init()	1
+main.cpp:313:13:void MX_GPIO_Init()	1
+main.cpp:359:6:void Error_Handler()	1
+main.cpp:368:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:368:1:cpp)	1

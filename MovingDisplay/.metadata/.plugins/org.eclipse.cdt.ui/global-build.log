@@ -501,3 +501,1212 @@ Finished building: default.size.stdout
  
 Finished building: Mother.list
  
+22:00:43 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/BNO055.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BNO055.d" -MT"Core/Src/BNO055.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BNO055.o"
+arm-none-eabi-g++ "../Core/Src/m_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/m_transmit.d" -MT"Core/Src/m_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/m_transmit.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/move.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/move.d" -MT"Core/Src/move.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/move.o"
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sdma_transmit.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+In file included from ../Core/Src/sdma_transmit.cpp:2:
+../Core/Inc/sdma_transmit.h:4:10: fatal error: stm32g0xx_hal_conf.h: No such file or directory
+    4 | #include "stm32g0xx_hal_conf.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:50: Core/Src/sdma_transmit.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.cpp:27:
+../Core/Inc/sdma_transmit.h:4:10: fatal error: stm32g0xx_hal_conf.h: No such file or directory
+    4 | #include "stm32g0xx_hal_conf.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+../Core/Src/BNO055.cpp: In member function 'QUATERNION BNO055::get_quaternion()':
+../Core/Src/BNO055.cpp:33:33: warning: narrowing conversion of '(((double)(float)quat[1]) / 1.6384e+4)' from 'double' to 'float' [-Wnarrowing]
+   33 |  QUATERNION q = { (float)quat[1]/16384.0,(float)quat[2]/16384.0,(float)quat[3]/16384.0,(float)quat[0]/16384.0 };
+      |                   ~~~~~~~~~~~~~~^~~~~~~~
+../Core/Src/BNO055.cpp:33:56: warning: narrowing conversion of '(((double)(float)quat[2]) / 1.6384e+4)' from 'double' to 'float' [-Wnarrowing]
+   33 |  QUATERNION q = { (float)quat[1]/16384.0,(float)quat[2]/16384.0,(float)quat[3]/16384.0,(float)quat[0]/16384.0 };
+      |                                          ~~~~~~~~~~~~~~^~~~~~~~
+../Core/Src/BNO055.cpp:33:79: warning: narrowing conversion of '(((double)(float)quat[3]) / 1.6384e+4)' from 'double' to 'float' [-Wnarrowing]
+   33 |  QUATERNION q = { (float)quat[1]/16384.0,(float)quat[2]/16384.0,(float)quat[3]/16384.0,(float)quat[0]/16384.0 };
+      |                                                                 ~~~~~~~~~~~~~~^~~~~~~~
+../Core/Src/BNO055.cpp:33:102: warning: narrowing conversion of '(((double)(float)quat[0]) / 1.6384e+4)' from 'double' to 'float' [-Wnarrowing]
+   33 |  QUATERNION q = { (float)quat[1]/16384.0,(float)quat[2]/16384.0,(float)quat[3]/16384.0,(float)quat[0]/16384.0 };
+      |                                                                                        ~~~~~~~~~~~~~~^~~~~~~~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:01:09 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sdma_transmit.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+In file included from ../Core/Src/sdma_transmit.cpp:2:
+../Core/Inc/sdma_transmit.h:4:10: fatal error: stm32f0xx_hal_conf.h: No such file or directory
+    4 | #include "stm32f0xx_hal_conf.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:50: Core/Src/sdma_transmit.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/main.cpp:27:
+../Core/Inc/sdma_transmit.h:4:10: fatal error: stm32f0xx_hal_conf.h: No such file or directory
+    4 | #include "stm32f0xx_hal_conf.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:01:29 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sdma_transmit.o"
+../Core/Src/sdma_transmit.cpp: In member function 'void SDMA_TRANSMIT::check_buf()':
+../Core/Src/sdma_transmit.cpp:15:34: error: 'struct DMA_Stream_TypeDef' has no member named 'CNDTR'; did you mean 'NDTR'?
+   15 |  index = UART->hdmarx->Instance->CNDTR;//バッファー残容�?
+      |                                  ^~~~~
+      |                                  NDTR
+../Core/Src/sdma_transmit.cpp:27:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   27 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:33:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   33 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:50: Core/Src/sdma_transmit.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.cpp:87:1: error: 'SDMA_TRASMIT' does not name a type; did you mean 'SDMA_TRANSMIT'?
+   87 | SDMA_TRASMIT fromTWE(&huart5,0);
+      | ^~~~~~~~~~~~
+      | SDMA_TRANSMIT
+../Core/Src/main.cpp: In function 'void check_coord()':
+../Core/Src/main.cpp:147:17: error: 'coord_array' was not declared in this scope
+  147 |  if(travel_x == coord_array[array_num][0] && travel_y == coord_array[array_num][1]){
+      |                 ^~~~~~~~~~~
+../Core/Src/main.cpp:147:29: error: 'array_num' was not declared in this scope
+  147 |  if(travel_x == coord_array[array_num][0] && travel_y == coord_array[array_num][1]){
+      |                             ^~~~~~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:232:12: error: 'fromTWE' was not declared in this scope
+  232 |     mode = fromTWE.mode;
+      |            ^~~~~~~
+../Core/Src/main.cpp:218:14: warning: unused variable 'q' [-Wunused-variable]
+  218 |   QUATERNION q;
+      |              ^
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:01:50 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sdma_transmit.o"
+../Core/Src/sdma_transmit.cpp: In member function 'void SDMA_TRANSMIT::check_buf()':
+../Core/Src/sdma_transmit.cpp:27:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   27 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:33:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   33 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:87:1: error: 'SDMA_TRASMIT' does not name a type; did you mean 'SDMA_TRANSMIT'?
+   87 | SDMA_TRASMIT fromTWE(&huart5,0);
+      | ^~~~~~~~~~~~
+      | SDMA_TRANSMIT
+../Core/Src/main.cpp: In function 'void check_coord()':
+../Core/Src/main.cpp:147:17: error: 'coord_array' was not declared in this scope
+  147 |  if(travel_x == coord_array[array_num][0] && travel_y == coord_array[array_num][1]){
+      |                 ^~~~~~~~~~~
+../Core/Src/main.cpp:147:29: error: 'array_num' was not declared in this scope
+  147 |  if(travel_x == coord_array[array_num][0] && travel_y == coord_array[array_num][1]){
+      |                             ^~~~~~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:232:12: error: 'fromTWE' was not declared in this scope
+  232 |     mode = fromTWE.mode;
+      |            ^~~~~~~
+../Core/Src/main.cpp:218:14: warning: unused variable 'q' [-Wunused-variable]
+  218 |   QUATERNION q;
+      |              ^
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:02:45 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:218:14: warning: unused variable 'q' [-Wunused-variable]
+  218 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  32560	    132	   2312	  35004	   88bc	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:04:04 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:88:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   88 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:219:14: warning: unused variable 'q' [-Wunused-variable]
+  219 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  32576	    132	   2312	  35020	   88cc	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:08:23 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:88:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   88 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:221:14: warning: unused variable 'q' [-Wunused-variable]
+  221 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34168	    132	   2312	  36612	   8f04	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:12:50 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sdma_transmit.o"
+../Core/Src/sdma_transmit.cpp: In member function 'void SDMA_TRANSMIT::check_buf()':
+../Core/Src/sdma_transmit.cpp:27:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   27 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:33:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   33 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34168	    132	   2312	  36612	   8f04	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:14:10 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:88:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   88 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:267:28: error: invalid conversion from 'int' to 'uint8_t*' {aka 'unsigned char*'} [-fpermissive]
+  267 |  HAL_UART_Receive(&huart5, mode, 1, 1000);
+      |                            ^~~~
+      |                            |
+      |                            int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.cpp:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:72: note:   initializing argument 2 of 'HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef*, uint8_t*, uint16_t, uint32_t)'
+  723 | HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                               ~~~~~~~~~^~~~~
+../Core/Src/main.cpp:221:14: warning: unused variable 'q' [-Wunused-variable]
+  221 |   QUATERNION q;
+      |              ^
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:14:34 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:88:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   88 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:221:14: warning: unused variable 'q' [-Wunused-variable]
+  221 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34184	    132	   2312	  36628	   8f14	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:15:18 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:88:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   88 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:221:14: warning: unused variable 'q' [-Wunused-variable]
+  221 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34168	    132	   2312	  36612	   8f04	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:19:24 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:88:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   88 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:221:14: warning: unused variable 'q' [-Wunused-variable]
+  221 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34160	    132	   2312	  36604	   8efc	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:27:32 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-size   Mother.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34160	    132	   2312	  36604	   8efc	Mother.elf
+Finished building: default.size.stdout
+ 
+22:27:51 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-size   Mother.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34160	    132	   2312	  36604	   8efc	Mother.elf
+Finished building: default.size.stdout
+ 
+22:29:36 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:218:14: warning: unused variable 'q' [-Wunused-variable]
+  218 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  32488	    132	   2152	  34772	   87d4	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:32:48 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:267:17: error: base operand of '->' has non-pointer type 'UART_HandleTypeDef' {aka '__UART_HandleTypeDef'}
+  267 |  index = &huart5->hdmarx->Instance->NDTR;
+      |                 ^~
+../Core/Src/main.cpp:223:14: warning: unused variable 'q' [-Wunused-variable]
+  223 |   QUATERNION q;
+      |              ^
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:33:29 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:5: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | int index;
+      |     ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:267:10: error: invalid conversion from 'volatile uint32_t*' {aka 'volatile long unsigned int*'} to 'int' [-fpermissive]
+  267 |  index = &huart5.hdmarx->Instance->NDTR;
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |          |
+      |          volatile uint32_t* {aka volatile long unsigned int*}
+../Core/Src/main.cpp:223:14: warning: unused variable 'q' [-Wunused-variable]
+  223 |   QUATERNION q;
+      |              ^
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:33:48 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:10: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | uint32_t index;
+      |          ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:267:10: error: invalid conversion from 'volatile uint32_t*' {aka 'volatile long unsigned int*'} to 'uint32_t' {aka 'long unsigned int'} [-fpermissive]
+  267 |  index = &huart5.hdmarx->Instance->NDTR;
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |          |
+      |          volatile uint32_t* {aka volatile long unsigned int*}
+../Core/Src/main.cpp:223:14: warning: unused variable 'q' [-Wunused-variable]
+  223 |   QUATERNION q;
+      |              ^
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:34:08 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:267:10: error: invalid conversion from 'volatile uint32_t*' {aka 'volatile long unsigned int*'} to 'uint32_t' {aka 'long unsigned int'} [-fpermissive]
+  267 |  index = &huart5.hdmarx->Instance->NDTR;
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |          |
+      |          volatile uint32_t* {aka volatile long unsigned int*}
+../Core/Src/main.cpp:223:14: warning: unused variable 'q' [-Wunused-variable]
+  223 |   QUATERNION q;
+      |              ^
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:34:19 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:223:14: warning: unused variable 'q' [-Wunused-variable]
+  223 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34040	    132	   2288	  36460	   8e6c	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:38:28 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sdma_transmit.o"
+../Core/Src/sdma_transmit.cpp: In member function 'void SDMA_TRANSMIT::check_buf()':
+../Core/Src/sdma_transmit.cpp:27:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   27 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:33:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   33 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:34:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+   34 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.cpp:87:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:226:14: warning: unused variable 'q' [-Wunused-variable]
+  226 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34152	    132	   2312	  36596	   8ef4	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:39:46 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sdma_transmit.o"
+../Core/Src/sdma_transmit.cpp: In member function 'void SDMA_TRANSMIT::check_buf()':
+../Core/Src/sdma_transmit.cpp:27:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   27 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:33:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   33 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:34:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+   34 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.cpp:87:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:226:14: warning: unused variable 'q' [-Wunused-variable]
+  226 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34152	    132	   2312	  36596	   8ef4	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:40:20 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:226:14: warning: unused variable 'q' [-Wunused-variable]
+  226 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34120	    132	   2440	  36692	   8f54	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:41:48 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:222:14: warning: unused variable 'q' [-Wunused-variable]
+  222 |   QUATERNION q;
+      |              ^
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34040	    132	   2288	  36460	   8e6c	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:44:35 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:87:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   87 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp:90:5: error: conflicting declaration 'int mode'
+   90 | int mode, clock, hue;
+      |     ^~~~
+../Core/Src/main.cpp:86:9: note: previous declaration as 'uint8_t mode'
+   86 | uint8_t mode = 0;
+      |         ^~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:225:14: warning: unused variable 'q' [-Wunused-variable]
+  225 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:568:3: error: 'readData' was not declared in this scope
+  568 |   readData = rxBuf[check_buf_point];
+      |   ^~~~~~~~
+../Core/Src/main.cpp:569:22: error: 'ID' was not declared in this scope
+  569 |   if(readData == 250+ID){
+      |                      ^~
+../Core/Src/main.cpp:572:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  572 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:573:5: error: 'rcvBuf' was not declared in this scope; did you mean 'rxBuf'?
+  573 |     rcvBuf[i-1] = rxBuf[read_buf_point];
+      |     ^~~~~~
+      |     rxBuf
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  578 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:579:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  579 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.cpp:582:10: error: 'rcvBuf' was not declared in this scope; did you mean 'rxBuf'?
+  582 |   mode = rcvBuf[0];
+      |          ^~~~~~
+      |          rxBuf
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:45:39 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:223:14: warning: unused variable 'q' [-Wunused-variable]
+  223 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:559:18: error: 'rxBuf' was not declared in this scope; did you mean 'rcvBuf'?
+  559 |   index = sizeof(rxBuf) - index;//�?新の受信�?ータ位置
+      |                  ^~~~~
+      |                  rcvBuf
+../Core/Src/main.cpp:566:3: error: 'readData' was not declared in this scope
+  566 |   readData = rxBuf[check_buf_point];
+      |   ^~~~~~~~
+../Core/Src/main.cpp:567:22: error: 'ID' was not declared in this scope
+  567 |   if(readData == 250+ID){
+      |                      ^~
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  577 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:46:19 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp:87:5: error: conflicting declaration 'int rxBuf [5]'
+   87 | int rxBuf[5];
+      |     ^~~~~
+../Core/Src/main.cpp:86:9: note: previous declaration as 'uint8_t rxBuf [128]'
+   86 | uint8_t rxBuf[128];
+      |         ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:224:14: warning: unused variable 'q' [-Wunused-variable]
+  224 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:567:3: error: 'readData' was not declared in this scope
+  567 |   readData = rxBuf[check_buf_point];
+      |   ^~~~~~~~
+../Core/Src/main.cpp:568:22: error: 'ID' was not declared in this scope
+  568 |   if(readData == 250+ID){
+      |                      ^~
+../Core/Src/main.cpp:571:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  571 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:572:5: error: 'rcvBuf' was not declared in this scope; did you mean 'rxBuf'?
+  572 |     rcvBuf[i-1] = rxBuf[read_buf_point];
+      |     ^~~~~~
+      |     rxBuf
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  577 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  578 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+../Core/Src/main.cpp:581:10: error: 'rcvBuf' was not declared in this scope; did you mean 'rxBuf'?
+  581 |   mode = rcvBuf[0];
+      |          ^~~~~~
+      |          rxBuf
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:46:48 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:224:14: warning: unused variable 'q' [-Wunused-variable]
+  224 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:568:22: error: 'ID' was not declared in this scope
+  568 |   if(readData == 250+ID){
+      |                      ^~
+../Core/Src/main.cpp:571:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  571 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  577 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  578 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:47:01 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:224:14: warning: unused variable 'q' [-Wunused-variable]
+  224 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:571:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  571 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  577 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  578 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34328	    132	   2320	  36780	   8fac	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:50:33 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:224:14: warning: unused variable 'q' [-Wunused-variable]
+  224 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:571:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  571 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  577 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  578 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34328	    132	   2320	  36780	   8fac	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:52:13 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:224:14: warning: unused variable 'q' [-Wunused-variable]
+  224 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:571:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  571 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  577 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  578 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34328	    132	   2320	  36780	   8fac	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:54:38 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:224:14: warning: unused variable 'q' [-Wunused-variable]
+  224 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:571:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  571 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  577 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  578 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34336	    132	   2320	  36788	   8fb4	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+22:57:17 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:224:14: warning: unused variable 'q' [-Wunused-variable]
+  224 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:571:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  571 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:577:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  577 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:578:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  578 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34248	    132	   2320	  36700	   8f5c	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:04:16 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34296	    132	   2320	  36748	   8f8c	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:05:23 **** Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/led.cpp" -mcpu=cortex-m0plus -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G030xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/led.o"
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m0plus -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G030xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/sdma_transmit.cpp" -mcpu=cortex-m0plus -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G030xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sdma_transmit.d" -MT"Core/Src/sdma_transmit.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sdma_transmit.o"
+../Core/Src/sdma_transmit.cpp: In member function 'void SDMA_TRANSMIT::check_buf()':
+../Core/Src/sdma_transmit.cpp:27:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   27 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/sdma_transmit.cpp:33:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+   33 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:141:33: error: 'class SDMA_TRANSMIT' has no member named 'in_hue'; did you mean 'in_hue1'?
+  141 |     out_hue1 = 2.5 * fromMother.in_hue;
+      |                                 ^~~~~~
+      |                                 in_hue1
+make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+02:05:39 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m0plus -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G030xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ -o "Panel.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\robot\Japan2024-Software\MovingDisplay\Panel\STM32G030K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Panel.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Panel.elf
+ 
+arm-none-eabi-size   Panel.elf 
+arm-none-eabi-objdump -h -S  Panel.elf  > "Panel.list"
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+Finished building: Panel.list
+ 
+02:06:39 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:07:09 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:07:44 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:08:32 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:08:46 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:09:04 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:09:41 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:11:16 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:12:30 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:12:59 **** Incremental Build of configuration Debug for project Panel ****
+make -j8 all 
+arm-none-eabi-size   Panel.elf 
+   text	   data	    bss	    dec	    hex	filename
+  22500	     24	   3028	  25552	   63d0	Panel.elf
+Finished building: default.size.stdout
+ 
+02:14:46 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34368	    132	   2320	  36820	   8fd4	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:17:02 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34368	    132	   2320	  36820	   8fd4	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:23:37 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34376	    132	   2320	  36828	   8fdc	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:37:24 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34376	    132	   2320	  36828	   8fdc	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:38:41 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-size   Mother.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34376	    132	   2320	  36828	   8fdc	Mother.elf
+Finished building: default.size.stdout
+ 
+02:39:59 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34384	    132	   2320	  36836	   8fe4	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:40:20 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-size   Mother.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34384	    132	   2320	  36836	   8fe4	Mother.elf
+Finished building: default.size.stdout
+ 
+02:42:11 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34440	    132	   2320	  36892	   901c	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:43:21 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34440	    132	   2320	  36892	   901c	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 
+02:44:22 **** Incremental Build of configuration Debug for project Mother ****
+make -j8 all 
+arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
+../Core/Src/main.cpp: In function 'int main()':
+../Core/Src/main.cpp:227:14: warning: unused variable 'q' [-Wunused-variable]
+  227 |   QUATERNION q;
+      |              ^
+../Core/Src/main.cpp: In function 'void check_buf()':
+../Core/Src/main.cpp:574:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  574 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:580:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  580 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:581:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  581 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
+arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: Mother.elf
+ 
+arm-none-eabi-size   Mother.elf 
+arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
+   text	   data	    bss	    dec	    hex	filename
+  34440	    132	   2320	  36892	   901c	Mother.elf
+Finished building: default.size.stdout
+ 
+Finished building: Mother.list
+ 

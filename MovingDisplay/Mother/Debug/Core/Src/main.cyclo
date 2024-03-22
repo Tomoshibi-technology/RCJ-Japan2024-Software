@@ -1,14 +1,16 @@
-main.cpp:103:6:void set_array(int, int, int, uint8_t, uint8_t)	5
-main.cpp:124:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	1
-main.cpp:143:6:void check_coord()	3
-main.cpp:157:5:int main()	8
-main.cpp:263:6:void SystemClock_Config()	3
-main.cpp:310:13:void MX_I2C1_Init()	2
-main.cpp:344:13:void MX_TIM3_Init()	4
-main.cpp:389:13:void MX_USART3_UART_Init()	2
-main.cpp:422:13:void MX_USART6_UART_Init()	2
-main.cpp:455:13:void MX_GPIO_Init()	1
-main.cpp:500:6:void Error_Handler()	1
+main.cpp:107:6:void set_array(int, int, int, uint8_t, uint8_t, uint8_t)	6
+main.cpp:133:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	1
+main.cpp:166:5:int main()	8
+main.cpp:280:6:void SystemClock_Config()	3
+main.cpp:327:13:void MX_I2C1_Init()	2
+main.cpp:361:13:void MX_TIM3_Init()	4
+main.cpp:406:13:void MX_UART5_Init()	2
+main.cpp:439:13:void MX_USART3_UART_Init()	2
+main.cpp:472:13:void MX_USART6_UART_Init()	2
+main.cpp:503:13:void MX_DMA_Init()	1
+main.cpp:521:13:void MX_GPIO_Init()	1
+main.cpp:561:6:void check_buf()	8
+main.cpp:603:6:void Error_Handler()	1
 cmath:155:5:constexpr typename __gnu_cxx::__promote_2<_Tp, _Up>::__type std::atan2(_Tp, _Up) [with _Tp = int; _Up = int]	1
-main.cpp:509:1:void __static_initialization_and_destruction_0(int, int)	3
-main.cpp:509:1:cpp)	1
+main.cpp:612:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:612:1:cpp)	1
