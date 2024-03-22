@@ -298,10 +298,10 @@ void exe_IR(){
  800027e:	000b      	movs	r3, r1
  8000280:	2b01      	cmp	r3, #1
  8000282:	d810      	bhi.n	80002a6 <exe_IR+0x42>
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 160);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 200);
  8000284:	4b39      	ldr	r3, [pc, #228]	; (800036c <exe_IR+0x108>)
  8000286:	681b      	ldr	r3, [r3, #0]
- 8000288:	22a0      	movs	r2, #160	; 0xa0
+ 8000288:	22c8      	movs	r2, #200	; 0xc8
  800028a:	635a      	str	r2, [r3, #52]	; 0x34
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
  800028c:	4b37      	ldr	r3, [pc, #220]	; (800036c <exe_IR+0x108>)
@@ -339,10 +339,10 @@ void exe_IR(){
  80002ba:	681b      	ldr	r3, [r3, #0]
  80002bc:	2200      	movs	r2, #0
  80002be:	635a      	str	r2, [r3, #52]	; 0x34
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 80);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 150);
  80002c0:	4b2a      	ldr	r3, [pc, #168]	; (800036c <exe_IR+0x108>)
  80002c2:	681b      	ldr	r3, [r3, #0]
- 80002c4:	2250      	movs	r2, #80	; 0x50
+ 80002c4:	2296      	movs	r2, #150	; 0x96
  80002c6:	639a      	str	r2, [r3, #56]	; 0x38
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);
  80002c8:	4b28      	ldr	r3, [pc, #160]	; (800036c <exe_IR+0x108>)
@@ -375,10 +375,10 @@ void exe_IR(){
  80002f6:	681b      	ldr	r3, [r3, #0]
  80002f8:	2200      	movs	r2, #0
  80002fa:	639a      	str	r2, [r3, #56]	; 0x38
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 40);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 100);
  80002fc:	4b1b      	ldr	r3, [pc, #108]	; (800036c <exe_IR+0x108>)
  80002fe:	681b      	ldr	r3, [r3, #0]
- 8000300:	2228      	movs	r2, #40	; 0x28
+ 8000300:	2264      	movs	r2, #100	; 0x64
  8000302:	63da      	str	r2, [r3, #60]	; 0x3c
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 0);
  8000304:	4b19      	ldr	r3, [pc, #100]	; (800036c <exe_IR+0x108>)
@@ -411,10 +411,10 @@ void exe_IR(){
  8000332:	681b      	ldr	r3, [r3, #0]
  8000334:	2200      	movs	r2, #0
  8000336:	63da      	str	r2, [r3, #60]	; 0x3c
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 20);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 50);
  8000338:	4b0c      	ldr	r3, [pc, #48]	; (800036c <exe_IR+0x108>)
  800033a:	681b      	ldr	r3, [r3, #0]
- 800033c:	2214      	movs	r2, #20
+ 800033c:	2232      	movs	r2, #50	; 0x32
  800033e:	641a      	str	r2, [r3, #64]	; 0x40
 }
  8000340:	e00f      	b.n	8000362 <exe_IR+0xfe>

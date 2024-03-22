@@ -94,25 +94,25 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 void exe_IR(){
 	tenth_of_a_millisecond = time_counter();
 	if(tenth_of_a_millisecond % 10 < 2){
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 160);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 200);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 0);
 	}else if(tenth_of_a_millisecond % 10 < 4){
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 80);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 150);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 0);
 	}else if(tenth_of_a_millisecond % 10 < 6){
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 40);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 100);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 0);
 	}else if(tenth_of_a_millisecond % 10 < 8){
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, 0);
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 20);
+		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_4, 50);
 	}else{
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0);

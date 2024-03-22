@@ -1,0 +1,6 @@
+../Core/Src/BNO055.cpp:3:1:BNO055::BNO055(I2C_HandleTypeDef, uint8_t)	32	static
+../Core/Src/BNO055.cpp:11:6:void BNO055::init()	16	static
+../Core/Src/BNO055.cpp:21:12:QUATERNION BNO055::get_quaternion()	112	static
+../Core/Src/BNO055.cpp:37:7:EULAR BNO055::get_eular()	120	static
+../Core/Src/BNO055.cpp:61:7:EULAR BNO055::get_accel()	96	static
+../Core/Src/BNO055.cpp:77:7:EULAR BNO055::get_gyro()	96	static
