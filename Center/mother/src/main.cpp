@@ -1,11 +1,9 @@
 #include <Arduino.h>
 
-// #include "./fled/fled.h"
-// #include <Adafruit_NeoPixel.h>
-// #define LED_PIN0 PA6
-// #define LED_NUM 300
-// Adafruit_NeoPixel neopixel0 = Adafruit_NeoPixel(LED_NUM, LED_PIN0, NEO_GRB + NEO_KHZ800);
-// FLED led0(&neopixel0, LED_NUM);
+#include <Adafruit_NeoPixel.h>
+#define LED_PIN0 PB5
+#define LED_NUM 20
+Adafruit_NeoPixel neopixel0 = Adafruit_NeoPixel(LED_NUM, LED_PIN0, NEO_GRB + NEO_KHZ800);
 
 #include <HardwareSerial.h>
 HardwareSerial PC(PA10, PA9); //UART1 RX, TX
@@ -29,6 +27,13 @@ void setup() {
 
 	pinMode(LED_PIN0, OUTPUT);
 	pinMode(LED_PIN1, OUTPUT);
+
+	neopixel0.begin();
+	neopixel0.setBrightness(20);
+	for(int i=0; i<LED_NUM; i++){
+		neopixel0.setPixelColor(i, neopixel0.Color(2, 10, 10));
+	}
+	neopixel0.show();
 }
 
 int i=0;

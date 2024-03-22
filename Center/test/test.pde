@@ -9,10 +9,12 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 AudioPlayer player;
+AudioPlayer sound_effect;
 Minim minim;
 
 String title2 = "Faint_Dream.mp3";
 String title = "LostSky-Fearless.mp3";
+String bgm = "button.mp3";
 float effect = 0; //波形にエフェクトをかける
 float line = 0;
 float left;
@@ -52,12 +54,18 @@ void setup() {
 
 	minim = new Minim(this);
   player = minim.loadFile(title,1024);
+	sound_effect = minim.loadFile(bgm,1024);
   // player.play();
 }
 
 int count = 0;
 long time_count = 0;
 boolean startflg = false;
+
+int start_millis;
+int beat_millis = 15; // 1000/66
+int pre_millis = 0;
+
 void draw() {
 	count++; 
 	if(count >1800) count = 0;
@@ -67,16 +75,23 @@ void draw() {
 
 	if(toggle1 && !(startflg)){
 		player.play();
-  }
+  } 
 	 
 	if(toggle1){
-
+		start_millis = millis();
     fill(color(255));
 		if(count%9 == 0){
 			time_count++;
 			print("time_count: ");
 			println(time_count);
-			if((time_count+7)%8==0)println("---------------------------------------------");
+
+			// int elapsed_millis
+			if(time_count%4==0){
+			//if(millis()-start_millis )
+				println("---------------------------------------------");
+				sound_effect.play();
+				sound_effect.rewind();
+			}
 		}
   }else{
 		fill(color(128));
@@ -105,4 +120,5 @@ void draw() {
   stroke(line*400,line*1000,500); //線の色
   strokeWeight(line*4); //線の太さ
 }
+
 
