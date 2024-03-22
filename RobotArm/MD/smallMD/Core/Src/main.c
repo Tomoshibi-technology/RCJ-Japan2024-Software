@@ -60,13 +60,14 @@ DMA_HandleTypeDef hdma_usart2_rx;
 /* USER CODE BEGIN PV */
 uint8_t rxBuf[256];
 uint8_t index_len = 0;
-uint8_t rcvData[3] = {
-		0, 0, 0
+uint8_t rcvData[5] = {
+		0, 0, 0, 1, 80
 };
 uint64_t milli_seconds = 0;
 uint64_t m_counter = 0;
 uint8_t ID = 5;
 int16_t angle = 0;
+int16_t gyro = 0;
 int16_t speed = 0;
 int16_t speed0 = 0;
 int16_t speed1 = 0;
@@ -130,13 +131,15 @@ void exe_motor(int8_t inst_speed){
 void DMA_read(){
 	index_len = huart2.hdmarx->Instance->CNDTR;
 	index_len = sizeof(rxBuf) - index_len;
-	uint16_t search = index_len - 7;
-	if(search > 0 && search < 253){
+	uint16_t search = index_len - 11;
+	if(search > 0 && search < 251){
 		while(1){
 			if(rxBuf[search] == 250){
 				rcvData[0] = rxBuf[search + 1];
 				rcvData[1] = rxBuf[search + 2];
 				rcvData[2] = rxBuf[search + 3];
+				rcvData[3] = rxBuf[search + 4];
+				rcvData[4] = rxBuf[search + 5];
 				break;
 			}
 			if(search == sizeof(rxBuf)){
@@ -166,11 +169,22 @@ void get_ID(){
 void unzip(uint8_t zip[3]){
 	angle = zip[0] * 100 + zip[1];
 	speed = zip[2];
+	gyro = zip[3] * 100 + zip[4] - 180;
 }
 void calc_angle(){
 	  speed0 = sin(((double)angle - 60) / 180 * 3.14) * speed;
 	  speed1 = sin(((double)angle - 180) / 180 * 3.14) * speed;
 	  speed2 = sin(((double)angle - 300) / 180 * 3.14) * speed;
+	  if(gyro > 5){
+		  speed0 -= gyro * 3;
+		  speed1 -= gyro * 3;
+		  speed2 -= gyro * 3;
+	  }
+	  if(gyro < -5){
+		  speed0 -= gyro * 3;
+		  speed1 -= gyro * 3;
+		  speed2 -= gyro * 3;
+	  }
 }
 void move(){
 	if(ID == 0){

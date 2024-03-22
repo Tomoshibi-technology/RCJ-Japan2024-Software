@@ -75,8 +75,8 @@ all: main-build
 main-build: servo_class.elf secondary-outputs
 
 # Tool invocations
-servo_class.elf servo_class.map: $(OBJS) $(USER_OBJS) C:\Users\tomoh\STM32CubeIDE\workspace_1.12.1\servo_class\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "servo_class.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\tomoh\STM32CubeIDE\workspace_1.12.1\servo_class\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="servo_class.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+servo_class.elf servo_class.map: $(OBJS) $(USER_OBJS) C:\github\Japan2024-Software\RobotArm\Servo\servo_class\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "servo_class.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\github\Japan2024-Software\RobotArm\Servo\servo_class\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="servo_class.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

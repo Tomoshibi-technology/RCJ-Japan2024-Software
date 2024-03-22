@@ -75,8 +75,8 @@ all: main-build
 main-build: mother.elf secondary-outputs
 
 # Tool invocations
-mother.elf mother.map: $(OBJS) $(USER_OBJS) C:\Users\tomoh\STM32CubeIDE\workspace_1.12.1\mother\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "mother.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\tomoh\STM32CubeIDE\workspace_1.12.1\mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+mother.elf mother.map: $(OBJS) $(USER_OBJS) C:\github\Japan2024-Software\RobotArm\メイン\mother\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "mother.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\github\Japan2024-Software\RobotArm\メイン\mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -60,8 +60,8 @@ all: main-build
 main-build: IR_send.elf secondary-outputs
 
 # Tool invocations
-IR_send.elf IR_send.map: $(OBJS) $(USER_OBJS) C:\Users\tomoh\STM32CubeIDE\workspace_1.12.1\IR_send\STM32G030K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "IR_send.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\tomoh\STM32CubeIDE\workspace_1.12.1\IR_send\STM32G030K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IR_send.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+IR_send.elf IR_send.map: $(OBJS) $(USER_OBJS) C:\github\Japan2024-Software\RobotArm\IR\IR_send\STM32G030K6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "IR_send.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\github\Japan2024-Software\RobotArm\IR\IR_send\STM32G030K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IR_send.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
