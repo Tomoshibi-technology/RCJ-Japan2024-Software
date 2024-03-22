@@ -45,6 +45,8 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
+TIM_HandleTypeDef htim3;
+
 UART_HandleTypeDef huart3;
 UART_HandleTypeDef huart6;
 
@@ -66,12 +68,22 @@ uint8_t Buf[12];
 int go_degree = 90;
 int go_speed = 50;
 int goal_travel_x = 0;
+int goal_travel_y = 0;
 
 uint8_t Error = 0;
-uint8_t test_array[9]={
-		220,0,50,5,50,7,50,3,120
+
+uint8_t send_array[9];
+
+double time;
+double saved_time = 0;
+int cz=0;
+double syoshoku = 0;
+double lastv = 0;
+
+int coord_array[3][3]={
+		(100,0,50),(50,0,50),(0,0,0)
 };
-int k = 0;
+int array_num = 0;
 
 /* USER CODE END PV */
 
@@ -81,12 +93,60 @@ static void MX_GPIO_Init(void);
 static void MX_USART6_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h){
+	send_array[0]=220;
+	tx += 5000; cx += 5000; cz += 5000;
+	uint8_t h_out = h/2.5;
+	for(int i = 1; i <3 ;i++){
+		send_array[i] = tx%100;
+		tx = (int)tx/100;
+	}
+	for(int i = 3; i <5 ;i++){
+		send_array[i] = cx%100;
+		cx = (int)cx/100;
+	}
+	for(int i = 5; i <7 ;i++){
+		send_array[i] = cz%100;
+		cz = (int)cz/100;
+	}
+	send_array[7] = r;
+	if(h_out > 100){h_out = 100;}
+	send_array[8] = h_out;
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+//    if (htim == &htim3){
+//    	time += 0.02;
+//		cz = syoshoku * time - (9.8/2) * time*time + 40;
+//
+//		if (cz <= 5){
+//			syoshoku = -lastv;
+//		}
+//		else{
+//			lastv = syoshoku + 9.8 * time;
+//		}
+//
+//
+//    	set_array(0, (-1)*-10, cz, 5, 200);
+//    	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 9, 100);
+//    }
+}
+
+void check_coord(){
+	if(travel_x == coord_array[array_num][0] && travel_y == coord_array[array_num][1]){
+		goal_travel_x = coord_array[array_num+1][0];
+		goal_travel_y = coord_array[array_num+1][1];
+		array_num ++;
+	}
+}
 
 /* USER CODE END 0 */
 
@@ -121,6 +181,7 @@ int main(void)
   MX_USART6_UART_Init();
   MX_USART3_UART_Init();
   MX_I2C1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_Delay(1000);
   while (!ready) {
@@ -138,6 +199,11 @@ int main(void)
 
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 
+  HAL_TIM_Base_Start_IT(&htim3);
+
+  goal_travel_x = coord_array[0][0];
+  goal_travel_y = coord_array[0][1];
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -151,6 +217,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	if(HAL_GPIO_ReadPin(START_GPIO_Port, START_Pin)==1){go_speed = 50;
+	}else{go_speed = 0;}
 
     travel_x = -1*odom1.get_travel() - xf;
     travel_y = -1*odom2.get_travel() - yf;
@@ -159,13 +227,13 @@ int main(void)
     rotate = -1*(e.z/3.1415)*180;
     rotate = (int)rotate;
 
-    if(travel_x>250){
+    if(travel_x>200){
     	goal_travel_x = 0;
     }else if(travel_x <=0){
-    	goal_travel_x = 250;
+    	goal_travel_x = 200;
     }
 
-    go_degree = atan2(goal_travel_x - travel_x, -(travel_y*5))/PI*180;
+    go_degree = atan2(goal_travel_x - travel_x, -(travel_y) )/ PI*180;
 
     motor_A.calcurate(rotate, go_degree, go_speed);
 	  motor_A.set_array(Buf);
@@ -176,15 +244,13 @@ int main(void)
 	  motor_D.calcurate(rotate, go_degree, go_speed);
 	  motor_D.set_array(Buf);
 
-	  test_array[1] = (k%10);
-	  k++;
-	  if(k>1000){
-		  k=0;
-	  }
-	  HAL_Delay(1);
+//	  check_coord();
 
-//	  HAL_UART_Transmit(&huart3, (uint8_t*)&Buf, 12, 100);
-	  HAL_UART_Transmit(&huart3,(uint8_t*)&test_array, 9, 100);
+	  set_array((-1)*travel_x, (-1)*50, 24, 12, 0);
+
+
+	  HAL_UART_Transmit(&huart6, (uint8_t*)&Buf, 12, 100);
+	  HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 9, 100);
 
   }
   /* USER CODE END 3 */
@@ -267,6 +333,51 @@ static void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 32-1;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 10000;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
 
 }
 
@@ -361,6 +472,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : START_Pin */
+  GPIO_InitStruct.Pin = START_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(START_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : READ_Pin */
+  GPIO_InitStruct.Pin = READ_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(READ_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

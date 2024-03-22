@@ -1585,11 +1585,11 @@ void LED::set_circle(int x, int z, int cx, int cz, int ro, int h){
  8000c56:	1e03      	subs	r3, r0, #0
  8000c58:	d100      	bne.n	8000c5c <_ZN3LED10set_circleEiiiiii+0x50>
 //        red = 10; green = 0; blue = 0;
-    	hue = h; sat = 240; val = 10;
+    	hue = h; sat = 240; val = 20;
     }else{}
 }
  8000c5a:	e008      	b.n	8000c6e <_ZN3LED10set_circleEiiiiii+0x62>
-    	hue = h; sat = 240; val = 10;
+    	hue = h; sat = 240; val = 20;
  8000c5c:	68fb      	ldr	r3, [r7, #12]
  8000c5e:	6aba      	ldr	r2, [r7, #40]	; 0x28
  8000c60:	60da      	str	r2, [r3, #12]
@@ -1597,7 +1597,7 @@ void LED::set_circle(int x, int z, int cx, int cz, int ro, int h){
  8000c64:	22f0      	movs	r2, #240	; 0xf0
  8000c66:	611a      	str	r2, [r3, #16]
  8000c68:	68fb      	ldr	r3, [r7, #12]
- 8000c6a:	220a      	movs	r2, #10
+ 8000c6a:	2214      	movs	r2, #20
  8000c6c:	615a      	str	r2, [r3, #20]
 }
  8000c6e:	46c0      	nop			; (mov r8, r8)
@@ -1656,9 +1656,9 @@ void LED::set_under(){
  8000cb8:	687b      	ldr	r3, [r7, #4]
  8000cba:	22e6      	movs	r2, #230	; 0xe6
  8000cbc:	611a      	str	r2, [r3, #16]
-    val = 3;
+    val = 10;
  8000cbe:	687b      	ldr	r3, [r7, #4]
- 8000cc0:	2203      	movs	r2, #3
+ 8000cc0:	220a      	movs	r2, #10
  8000cc2:	615a      	str	r2, [r3, #20]
 }
  8000cc4:	46c0      	nop			; (mov r8, r8)

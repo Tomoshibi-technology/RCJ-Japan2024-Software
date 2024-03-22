@@ -38,7 +38,7 @@ void LED::set_circle(int x, int z, int cx, int cz, int ro, int h){
     float distance = (x-cx)*(x-cx)+(z-cz)*(z-cz);
     if(ro*ro>=distance){
 //        red = 10; green = 0; blue = 0;
-    	hue = h; sat = 240; val = 10;
+    	hue = h; sat = 240; val = 20;
     }else{}
 }
 
@@ -53,7 +53,7 @@ void LED::do_backRewrite(){
 void LED::set_under(){
     hue = 50;
     sat = 230;
-    val = 3;
+    val = 10;
 }
 
 void LED::set_color(uint16_t pixel_num){

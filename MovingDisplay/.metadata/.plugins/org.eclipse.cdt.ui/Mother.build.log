@@ -1,9 +1,27 @@
-03:51:01 **** Incremental Build of configuration Debug for project Mother ****
+17:54:48 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
+   84 |   (100,0,50),(50,0,50),(0,0,0)
+      |    ^~~
+../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
+   84 |   (100,0,50),(50,0,50),(0,0,0)
+      |          ^~
+../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
+   84 |   (100,0,50),(50,0,50),(0,0,0)
+      |               ^~
+../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
+   84 |   (100,0,50),(50,0,50),(0,0,0)
+      |                    ^~
+../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
+   84 |   (100,0,50),(50,0,50),(0,0,0)
+      |                         ^
+../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
+   84 |   (100,0,50),(50,0,50),(0,0,0)
+      |                             ^
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:147:14: warning: unused variable 'q' [-Wunused-variable]
-  147 |   QUATERNION q;
+../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
+  213 |   QUATERNION q;
       |              ^
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
@@ -11,11 +29,11 @@ Finished building target: Mother.elf
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  27224	    144	   1908	  29276	   725c	Mother.elf
+  30496	    168	   1996	  32660	   7f94	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
 
-03:51:04 Build Finished. 0 errors, 1 warnings. (took 3s.131ms)
+17:54:50 Build Finished. 0 errors, 7 warnings. (took 2s.215ms)
 
