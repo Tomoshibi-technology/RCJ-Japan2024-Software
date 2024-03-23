@@ -84,8 +84,8 @@ void draw() {
 		if(pre_millis + beat_millis < now_millis){
 			if(raw_count%32 == 0){
 				beat_count++;
-				pon.play();
-				pon.rewind();
+				// pon.play();
+				// pon.rewind();
 				// print("__________________");
 				// println(beat_count);
 			}
@@ -120,7 +120,7 @@ void draw() {
 		myHue = 134;
 	}else if(beat_count <= 161){
 		mode = 4;
-		myHue = 190;
+		myHue = 180;
 	}else if(beat_count <= 192){ // 一つ目のみんな同時
 		mode = 5;
 		myHue = 20;
