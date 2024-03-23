@@ -86,8 +86,8 @@ void draw() {
 				beat_count++;
 				pon.play();
 				pon.rewind();
-				print("__________________");
-				println(beat_count);
+				// print("__________________");
+				// println(beat_count);
 			}
 			pre_millis += beat_millis;
 			raw_count++;
