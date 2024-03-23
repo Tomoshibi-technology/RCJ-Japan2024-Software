@@ -42,7 +42,12 @@ void setup() {
 	// control_init();
 	//ーーーーーまじでーーーーー
 
-	pinMode(PC11,INPUT); // 下のスライド
+	// pinMode(PC11,INPUT); // 下のスライド
+
+	pinMode(PA5,OUTPUT);
+	pinMode(PB2,OUTPUT);
+	digitalWrite(PA5,HIGH);
+	digitalWrite(PB2,HIGH);
 }
 
 unsigned long loop_timer = 10000;

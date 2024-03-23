@@ -139,7 +139,15 @@ void draw() {
 		myPort.write(byte(raw_count/240 + 5)); //2
 		myPort.write(byte(raw_count%240 + 5)); //3
 		myPort.write(slider1); //4
+
+		print(mode);
+		print("___");
+		print(raw_count);
+		print("___");
+		print(slider1);
+		print("___");
 	}
+
 	if(myPort.available() > 0){
 		println(myPort.read());
 	}

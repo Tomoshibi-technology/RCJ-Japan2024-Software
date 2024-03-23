@@ -58,6 +58,9 @@ uint8_t ledHigh = 59;
 uint8_t pre_mic_value = 0;
 
 int test = 100;
+
+void led_set(int tape_n, int num, int H, int S, int V);
+
 void loop() {
 	// Serial.print("voltage: " + String(power.voltage()) + " " + String(power.percentage()) + "  ");
 
@@ -84,32 +87,19 @@ void loop() {
 
 
 
-	for(int i=0;i<116;i++){
-		if(i<58){
-			if(i<ledHigh){
-				tape_led[0].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
-				tape_led[1].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
-				tape_led[2].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
-			}else{
-				tape_led[0].setPixel_hsv(i,3, 25, 5);
-				tape_led[1].setPixel_hsv(i,3, 25, 5);
-				tape_led[2].setPixel_hsv(i,3, 25, 5);
+	for(int num=0;num<58;num++){
+		if(num<ledHigh){
+			for(int tape_n=0; tape_n<6; tape_n++){
+				led_set(tape_n, num, ser_ctrl.data[10],250, 100);
 			}
 		}else{
-			int myi = 116-i;
-			if(myi<ledHigh){
-				tape_led[0].setPixel_hsv(116-myi, ser_ctrl.data[10], 250, 100);
-				tape_led[1].setPixel_hsv(116-myi, ser_ctrl.data[10], 250, 100);
-				tape_led[2].setPixel_hsv(116-myi, ser_ctrl.data[10], 250, 100);
-			}else{
-				tape_led[0].setPixel_hsv(116-myi,3, 25, 5);
-				tape_led[1].setPixel_hsv(116-myi,3, 25, 5);
-				tape_led[2].setPixel_hsv(116-myi,3, 25, 5);
+			for(int tape_n=0; tape_n<6; tape_n++){
+				led_set(tape_n, num, 10,10, 10);
 			}
 		}
 	}
 
-
+	led_set(5,5,10,10,10);
 
 	for(int i=0; i<3; i++){
 		tape_led[i].refresh();
@@ -118,6 +108,35 @@ void loop() {
 	voltage_set(power.voltage(), power.percentage());
 	circuit_led.refresh();
 }
+
+
+void led_set(int tape_n, int num, int H, int S, int V){
+	bool oddflg = false;
+	if(tape_n == 0){
+		tape_n = 0;
+	}else if(tape_n == 1){
+		tape_n = 0;
+		oddflg = true;
+	}else if(tape_n == 2){
+		tape_n = 1;
+	}else if(tape_n == 3){
+		tape_n = 1;
+		oddflg = true;
+	}else if(tape_n == 4){
+		tape_n = 2;
+	}else if(tape_n == 5){
+		tape_n = 2;
+		oddflg = true;
+	}
+
+	if(!oddflg){
+		tape_led[tape_n].setPixel_hsv(num,H,S,V);
+	}else{
+		tape_led[tape_n].setPixel_hsv(115-num,H,S,V);
+	}
+}
+
+
 
 
 
