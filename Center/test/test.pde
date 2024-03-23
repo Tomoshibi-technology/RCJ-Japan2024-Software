@@ -123,7 +123,7 @@ void draw() {
 		myHue = 180;
 	}else if(beat_count <= 192){ // 一つ目のみんな同時
 		mode = 5;
-		myHue = 20;
+		myHue = 60;
 	}else if(beat_count <= 257){
 		mode = 6;
 		myHue = 160;
