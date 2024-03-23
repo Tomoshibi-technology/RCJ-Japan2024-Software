@@ -3,7 +3,7 @@ rotate
 travel_x
 travel_y
 goal_travel_x
-Buf
+goal_travel_y
 array_num
 mode
 index
@@ -12,3 +12,6 @@ clock
 hue
 rcvBuf
 send_array
+Error
+go_degree
+go_speed

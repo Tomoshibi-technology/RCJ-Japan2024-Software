@@ -12,12 +12,11 @@ void SDMA_TRANSMIT::begin_dma(){
 }
 
 void SDMA_TRANSMIT::check_buf(){
-	index = UART->hdmarx->Instance->CNDTR;//バッファー残容量
- 	index = sizeof(rxBuf) - index;//最新の受信データ位置
+	index = UART->hdmarx->Instance->CNDTR;
+ 	index = sizeof(rxBuf) - index;
 
  	int check_buf_point = index - 21;
  	if(check_buf_point < 0){check_buf_point = check_buf_point + sizeof(rxBuf);}
- 	//読み込み済みデータ位置より最新の受信データ位置が前にある時(バッファー内で受信データが一周してた場合)値を補正
 
 	while(1){
 		readData = rxBuf[check_buf_point];

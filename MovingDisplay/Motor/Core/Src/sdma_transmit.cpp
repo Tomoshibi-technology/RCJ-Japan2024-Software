@@ -17,7 +17,6 @@ int SDMA_TRANSMIT::check_buf(){
 
  	int check_buf_point = index - 25;
  	if(check_buf_point < 0){check_buf_point = check_buf_point + sizeof(rxBuf);}
- 	//読み込み済みデータ位置より最新の受信データ位置が前にある時(バッファー内で受信データが一周してた場合)値を補正
 
 	while(1){
 		readData = rxBuf[check_buf_point];

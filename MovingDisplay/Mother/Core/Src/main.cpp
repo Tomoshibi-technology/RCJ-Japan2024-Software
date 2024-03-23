@@ -87,6 +87,14 @@ uint8_t rxBuf[128];
 int rcvBuf[4], readData;
 
 int mode, clock, hue;
+uint8_t array_num = 0;
+uint8_t past_array_num = 0;
+
+#define array_amount 10
+int coord_array[array_amount][3]={
+		{150,0,50},{250,0,50},{60,0,50},{250,0,50},{60,0,50},{160,0,50},{160,30,50},{250,30,50},{60,30,50},{60,0,50}
+};
+int c_x;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,6 +114,15 @@ static void MX_UART5_Init(void);
 /* USER CODE BEGIN 0 */
 void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h, uint8_t h2){
 	send_array[0]=220;
+
+	if(cx - tx > 48+r){
+		cx = cx -((48*2) - (r*2)+1);
+	}else if(cx - tx < -(48-r)){
+		cx = cx + ((48*2) + (r*2)-1);
+	}
+
+	c_x = cx;
+
 	tx += 5000; cx += 5000; cz += 5000;
 	uint8_t h_out = h/2.5;
 	uint8_t h_out2 = h2/2.5;
@@ -128,34 +145,43 @@ void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h, uint8_t h2){
 	send_array[9] = h_out2;
 }
 
-void check_buf();
+void check_TWEbuf();
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-//    if (htim == &htim3){
-//    	time += 0.02;
-//		cz = syoshoku * time - (9.8/2) * time*time + 40;
-//
-//		if (cz <= 5){
-//			syoshoku = -lastv;
-//		}
-//		else{
-//			lastv = syoshoku + 9.8 * time;
-//		}
-//
-//
-//    	set_array(0, (-1)*-10, cz, 5, 200);
-//    	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 9, 100);
-//    }
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+
+void check_coord(){
+	if(travel_x > coord_array[array_num][0]-4 && travel_x < coord_array[array_num][0]+4 &&travel_y > coord_array[array_num][1]-4 &&travel_y < coord_array[array_num][1]+4){
+		if(array_num < array_amount){
+			array_num += 1 ;
+		}
+		goal_travel_x = coord_array[array_num][0];
+		goal_travel_y = coord_array[array_num][1];
+	}
+	//array外対応
+	if(array_num >= array_amount && mode <= 8){
+		go_speed = 50;
+		if(travel_x >250){goal_travel_x = 65;}
+		else if(travel_x <65){goal_travel_x = 250;}
+	}else if(HAL_GPIO_ReadPin(START_GPIO_Port, START_Pin)==1 && mode >= 4 && mode <= 8){
+		go_speed = coord_array[array_num][2];
+	}else if(mode == 9){
+		go_speed = 0;
+	}else{
+		go_speed = 0;
+	}
 }
 
-//void check_coord(){
-//	if(travel_x == coord_array[array_num][0] && travel_y == coord_array[array_num][1]){
-//		goal_travel_x = coord_array[array_num+1][0];
-//		goal_travel_y = coord_array[array_num+1][1];
-//		array_num ++;
-//	}
-//}
+void set_and_send_to_motor(){
+	motor_A.calcurate(rotate, go_degree, go_speed);
+	motor_A.set_array(Buf);
+	motor_B.calcurate(rotate, go_degree, go_speed);
+	motor_B.set_array(Buf);
+	motor_C.calcurate(rotate, go_degree, go_speed);
+	motor_C.set_array(Buf);
+	motor_D.calcurate(rotate, go_degree, go_speed);
+	motor_D.set_array(Buf);
+	HAL_UART_Transmit(&huart6, (uint8_t*)&Buf, 12, 5);
+}
 
 /* USER CODE END 0 */
 
@@ -216,6 +242,9 @@ int main(void)
 
   HAL_UART_Receive_DMA(&huart5, rxBuf, sizeof(rxBuf));
 
+  goal_travel_x = coord_array[0][0];
+  goal_travel_y = coord_array[0][1];
+  go_speed = coord_array[0][2];
 
   /* USER CODE END 2 */
 
@@ -232,43 +261,53 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	if(HAL_GPIO_ReadPin(START_GPIO_Port, START_Pin)==1){go_speed = 50;
-	}else{go_speed = 0;}
 
+	//odometery-----------------------------
     travel_x = -1*odom1.get_travel() - xf;
     travel_y = -1*odom2.get_travel() - yf;
 
-
+    //bno055--------------------------------
     e = bno055.get_eular();
     rotate = -1*(e.z/3.1415)*180;
     rotate = (int)rotate;
 
-    if(travel_x>200){
-    	goal_travel_x = 0;
-    }else if(travel_x <=0){
-    	goal_travel_x = 200;
-    }
+    //direction-----------------------------
+    go_degree = atan2((double)goal_travel_x - (double)travel_x, (double)goal_travel_y -(double)(travel_y) )/ PI*180;
 
-    go_degree = atan2(goal_travel_x - travel_x, -(travel_y) )/ PI*180;
+    //prepare for transmition---------------
 
-    motor_A.calcurate(rotate, go_degree, go_speed);
-	motor_A.set_array(Buf);
-	motor_B.calcurate(rotate, go_degree, go_speed);
-	motor_B.set_array(Buf);
-	motor_C.calcurate(rotate, go_degree, go_speed);
-	motor_C.set_array(Buf);
-	motor_D.calcurate(rotate, go_degree, go_speed);
-	motor_D.set_array(Buf);
+	//coordinate check----------------------
+    /*
+	check_coord();
+	if(array_num==7){
+		go_speed = 0;
+		if(past_array_num == 6&& array_num ==7){
+			for(int i = 150; i<250; i++){
+				set_array((-1)*travel_x, (-1)*i, 24, 12+((-1)*travel_y*0.05), hue, (hue + 90)%250);
+				HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 10, 100);
+				HAL_Delay(20);
+			}
+		}
+		if(mode!=9){go_speed = 50;}
+		set_array((-1)*travel_x, (-1)*250, 24, 12+((-1)*travel_y*0.05), hue, (hue + 90)%250);
+	}else if(array_num>=8){
+		set_array((-1)*travel_x, (-1)*250, 24, 12+((-1)*travel_y*0.05), hue, (hue + 90)%250);
+	}else{
+		set_array((-1)*travel_x, (-1)*150, 24, 12+((-1)*travel_y*0.05), hue, (hue + 90)%250);
+	}
+	*/
+    set_array((-1)*travel_x, (-1)*0, 24, 12+((-1)*travel_y*0.05), 0, 120);
 
-//	  check_coord();
-
-	set_array((-1)*travel_x, (-1)*-24, 24, 12+((-1)*travel_y*0.2), hue, 0);
-
-
-//	HAL_UART_Transmit(&huart6, (uint8_t*)&Buf, 12, 100);
+	//send_data-----------------------------
+//
+	set_and_send_to_motor();
 	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 10, 100);
 
-	check_buf();
+	//Twelite
+	check_TWEbuf();
+
+	//
+	past_array_num = array_num;
   }
   /* USER CODE END 3 */
 }
@@ -558,7 +597,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-void check_buf(){
+void check_TWEbuf(){
 	index = huart5.hdmarx->Instance->NDTR;//バッファー残容量
  	index = sizeof(rxBuf) - index;//最新の受信データ位置
 
@@ -581,7 +620,7 @@ void check_buf(){
 		if(check_buf_point==index){break;}
 	}
 
- 	mode = rcvBuf[0];
+ 	mode = rcvBuf[0]-5;
 
 	clock = 0;
  	int hyaku = 1;
@@ -592,6 +631,25 @@ void check_buf(){
 
 	hue = rcvBuf[3];
 
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+//    if (htim == &htim3){
+//    	time += 0.02;
+//		cz = syoshoku * time - (9.8/2) * time*time + 40;
+//
+//		if (cz <= 5){
+//			syoshoku = -lastv;
+//		}
+//		else{
+//			lastv = syoshoku + 9.8 * time;
+//		}
+//
+//
+//    	set_array(0, (-1)*-10, cz, 5, 200);
+//    	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 9, 100);
+//    }
 }
 
 /* USER CODE END 4 */
