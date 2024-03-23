@@ -105,23 +105,23 @@ void draw() {
 
 	//Mode選ぶ
 	int mode;
-	if(raw_count == 0){
+	if(beat_count == 0){
 		mode = 0;
-	}else if(raw_count <= 32){
+	}else if(beat_count <= 32){
 		mode = 1;
-	}else if(raw_count <= 80){
+	}else if(beat_count <= 80){
 		mode = 2;
-	}else if(raw_count <= 96){
+	}else if(beat_count <= 96){
 		mode = 3;
-	}else if(raw_count <= 161){
+	}else if(beat_count <= 161){
 		mode = 4;
-	}else if(raw_count <= 192){
+	}else if(beat_count <= 192){
 		mode = 5;
-	}else if(raw_count <= 257){
+	}else if(beat_count <= 257){
 		mode = 6;
-	}else if(raw_count <= 321){
+	}else if(beat_count <= 321){
 		mode = 7;
-	}else if(raw_count <= 354){
+	}else if(beat_count <= 354){
 		mode = 8;
 	}else{
 		mode = 9;

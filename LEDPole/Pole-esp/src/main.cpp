@@ -47,29 +47,69 @@ void setup() {
 
 	ser_ctrl.init();
 	power.init();
+
+	pinMode(35, INPUT); //mic
+
 }
+
+
+uint8_t ledH = 0;
+uint8_t ledHigh = 59;
+uint8_t pre_mic_value = 0;
 
 int test = 100;
 void loop() {
-	Serial.print("voltage: " + String(power.voltage()) + " " + String(power.percentage()) + "  ");
+	// Serial.print("voltage: " + String(power.voltage()) + " " + String(power.percentage()) + "  ");
+
+
+	int mic_value = analogRead(35)-1000; //0-2500
+	mic_value = mic_value*0.4 + pre_mic_value*0.6;
+	ledHigh = mic_value/42;
+	Serial.print(mic_value);
+	Serial.print("   ");
+	Serial.println(ledHigh);
+
 
 	ser_ctrl.read();
-	for(int i=0; i<12; i++){
-		Serial.print(ser_ctrl.data[i]);
-		Serial.print(" ");
-	}
-	Serial.println();
+	// for(int i=0; i<12; i++){
+	// 	Serial.print(ser_ctrl.data[i]);
+	// 	Serial.print(" ");
+	// }
+	// Serial.println();
 
 	circuit_led.setBrightness(250);
 	for(int i=0; i<10; i++){
 		circuit_led.setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
 	}
 
+
+
 	for(int i=0;i<116;i++){
-		tape_led[0].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
-		tape_led[1].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
-		tape_led[2].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
+		if(i<58){
+			if(i<ledHigh){
+				tape_led[0].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
+				tape_led[1].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
+				tape_led[2].setPixel_hsv(i, ser_ctrl.data[10], 250, 100);
+			}else{
+				tape_led[0].setPixel_hsv(i,3, 25, 5);
+				tape_led[1].setPixel_hsv(i,3, 25, 5);
+				tape_led[2].setPixel_hsv(i,3, 25, 5);
+			}
+		}else{
+			int myi = 116-i;
+			if(myi<ledHigh){
+				tape_led[0].setPixel_hsv(116-myi, ser_ctrl.data[10], 250, 100);
+				tape_led[1].setPixel_hsv(116-myi, ser_ctrl.data[10], 250, 100);
+				tape_led[2].setPixel_hsv(116-myi, ser_ctrl.data[10], 250, 100);
+			}else{
+				tape_led[0].setPixel_hsv(116-myi,3, 25, 5);
+				tape_led[1].setPixel_hsv(116-myi,3, 25, 5);
+				tape_led[2].setPixel_hsv(116-myi,3, 25, 5);
+			}
+		}
 	}
+
+
 
 	for(int i=0; i<3; i++){
 		tape_led[i].refresh();
