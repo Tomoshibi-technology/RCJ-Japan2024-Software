@@ -8,16 +8,14 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
-AudioPlayer player;
-AudioPlayer sound_effect;
+AudioPlayer performance;
+AudioPlayer ready;
+AudioPlayer pon;
 Minim minim;
 
-String title2 = "Faint_Dream.mp3";
-String title = "LostSky-Fearless.mp3";
-String bgm = "button.mp3";
-float effect = 0; //波形にエフェクトをかける
-float line = 0;
-float left;
+String bgm_performance = "LostSky-Fearless.mp3";
+String bgm_ready = "Faint_Dream.mp3";
+String bgm_pon = "button.mp3";
 
 
 ControlP5 cp5; 
@@ -36,89 +34,120 @@ void setup() {
 	int available_serialport = 1; // シリアル検索プログラムで調べたシリアルポートの番号に変更s
 	String arduinoPort = Serial.list()[available_serialport];
 	myPort = new Serial(this, arduinoPort, 115200); // シリアルポートの設定
+	
 	cp5 = new ControlP5(this);
 
 	cp5.addSlider("slider1")
 		.setPosition(50,150)
 		.setSize(860,150)
-		.setRange(1,240)
+		.setRange(1,254)
 		.setValue(127)
 		// .setRange(0,59)
 		// .setValue(30)
 	;
+
 	cp5.addToggle("toggle1")
 		.setPosition(80,80)
 		.setSize(50,20)
 		.setValue(false)
-		;
+	;
 
 	minim = new Minim(this);
-  player = minim.loadFile(title,1024);
-	sound_effect = minim.loadFile(bgm,1024);
-  // player.play();
+  performance = minim.loadFile(bgm_performance,1024);
+	ready = minim.loadFile(bgm_ready,1024);
+	pon = minim.loadFile(bgm_pon,1024);
 }
 
-int count = 0;
-long time_count = 0;
 boolean startflg = false;
 
 int start_millis;
-int beat_millis = 15; // 1000/66
-int pre_millis = 0;
+int beat_millis = 17; // 1000/66
+long pre_millis = 0;
+
+int raw_count = 0;
+int beat_count = 0;
 
 void draw() {
-	count++; 
-	if(count >1800) count = 0;
 
 	colorMode( HSB ); 
 	background(slider1,200,250); // 背景色をスライダーの値に変更
 
+	//　時間経過
 	if(toggle1 && !(startflg)){
-		player.play();
-  } 
-	 
-	if(toggle1){
+		performance.play();
 		start_millis = millis();
+		startflg = true;
+  }
+	if(startflg){
     fill(color(255));
-		if(count%9 == 0){
-			time_count++;
-			print("time_count: ");
-			println(time_count);
-
-			// int elapsed_millis
-			if(time_count%4==0){
-			//if(millis()-start_millis )
-				println("---------------------------------------------");
-				sound_effect.play();
-				sound_effect.rewind();
+		int now_millis = millis() - start_millis;
+		if(pre_millis + beat_millis < now_millis){
+			if(raw_count%32 == 0){
+				beat_count++;
+				pon.play();
+				pon.rewind();
+				print("__________________");
+				println(beat_count);
 			}
+			pre_millis += beat_millis;
+			raw_count++;
 		}
   }else{
 		fill(color(128));
 	}
-  rect(180,80,20,20);
-	
-	// print("count: ");
-	// print(count);	
 
-	if(count%3 == 0){ //20FPS
+  rect(180,80,20,20);
+	// print(raw_count);
+	// print("__");
+	// print(pre_millis);
+	// println("__");
+
+
+	//Mode選ぶ
+	int mode;
+	if(raw_count == 0){
+		mode = 0;
+	}else if(raw_count <= 32){
+		mode = 1;
+	}else if(raw_count <= 80){
+		mode = 2;
+	}else if(raw_count <= 96){
+		mode = 3;
+	}else if(raw_count <= 161){
+		mode = 4;
+	}else if(raw_count <= 192){
+		mode = 5;
+	}else if(raw_count <= 257){
+		mode = 6;
+	}else if(raw_count <= 321){
+		mode = 7;
+	}else if(raw_count <= 354){
+		mode = 8;
+	}else{
+		mode = 9;
+	}
+
+	// 色の調整
+	if(slider1 == 250){
+		slider1 = 251;
+	}
+
+	// 通信
+	if(raw_count%3 == 0){ //20FPS
 		myPort.write(250);
-		myPort.write(30); //1         
-		myPort.write(byte(time_count/240 + 5)); //2
-		myPort.write(byte(time_count%240 + 5)); //3
+		myPort.write(mode+5); //1         
+		myPort.write(byte(raw_count/240 + 5)); //2
+		myPort.write(byte(raw_count%240 + 5)); //3
 		myPort.write(slider1); //4
 	}
 	if(myPort.available() > 0){
 		println(myPort.read());
 	}
 
-	for(int i = 0; i < player.left.size()-1; i++){
-    line = abs(player.left.get(i));
-    left = player.left.get(i);
-    // line(i+effect, 100 + left*amp, i, 100 + player.left.get(i+1)*amp);    // Lチャンネルの波形
-  }
-  stroke(line*400,line*1000,500); //線の色
-  strokeWeight(line*4); //線の太さ
+
+
+
+
 }
 
 
