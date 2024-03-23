@@ -12,6 +12,7 @@ AudioPlayer performance;
 AudioPlayer ready;
 AudioPlayer pon;
 Minim minim;
+FFT fft;
 
 String bgm_performance = "LostSky-Fearless.mp3";
 String bgm_ready = "Faint_Dream.mp3";
@@ -28,7 +29,8 @@ Serial myPort;
 void setup() {
 	printArray(Serial.list());
 
-	size(960,540);
+	// size(1920,1080);
+	fullScreen();
   frameRate(66);
 
 	int available_serialport = 1; // シリアル検索プログラムで調べたシリアルポートの番号に変更s
@@ -38,17 +40,17 @@ void setup() {
 	cp5 = new ControlP5(this);
 
 	cp5.addSlider("slider1")
-		.setPosition(50,150)
-		.setSize(860,150)
+		.setPosition(80,30)
+		.setSize(1350,50)
 		.setRange(1,254)
 		.setValue(127)
-		// .setRange(0,59)
-		// .setValue(30)
-	;
+    .setColorForeground(color(20,10,100))   // バー色
+    .setColorActive(color(10,20,230))   // マウス選択色
+  ;
 
 	cp5.addToggle("toggle1")
-		.setPosition(80,80)
-		.setSize(50,20)
+		.setPosition(80,100)
+		.setSize(500,50)
 		.setValue(false)
 	;
 
@@ -56,6 +58,8 @@ void setup() {
   performance = minim.loadFile(bgm_performance,1024);
 	ready = minim.loadFile(bgm_ready,1024);
 	pon = minim.loadFile(bgm_pon,1024);
+
+	fft = new FFT(performance.bufferSize(), performance.sampleRate());
 }
 
 boolean startflg = false;
@@ -69,8 +73,10 @@ int beat_count = 0;
 
 void draw() {
 
+
 	colorMode( HSB ); 
 	background(slider1,200,250); // 背景色をスライダーの値に変更
+
 
 	//　時間経過
 	if(toggle1 && !(startflg)){
@@ -95,13 +101,7 @@ void draw() {
   }else{
 		fill(color(128));
 	}
-
-  rect(180,80,20,20);
-	// print(raw_count);
-	// print("__");
-	// print(pre_millis);
-	// println("__");
-
+  rect(670,100,20,20);
 
 	//Mode選ぶ
 	int mode;
@@ -166,6 +166,24 @@ void draw() {
 		print(myHue);
 		println("___");
 	}
+
+	//お絵描き
+	if(mode != 0){
+		// rect(0,0,1920,1080);
+		// colorMode(RGB, 255);
+		// background(0);
+		// fft.forward(in.mix);
+		
+		noStroke();
+		colorMode(HSB, 360, 100, 100, 255);
+		for(int i = 0; i < fft.specSize(); i++){
+			float hue = map(i, 0, fft.specSize(), 0, 360);
+			fill(hue, 100, 100, 10);
+			float radious = fft.getBand(i) * 5;
+			ellipse(width/2, height/2, radious * 2, radious * 2);
+		}
+	}
+
 }
 
 
