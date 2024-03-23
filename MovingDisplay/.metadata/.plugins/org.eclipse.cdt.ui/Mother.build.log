@@ -1,22 +1,22 @@
-23:47:53 **** Incremental Build of configuration Debug for project Mother ****
+05:31:29 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
    85 | volatile uint32_t index;
       |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:256:14: warning: unused variable 'q' [-Wunused-variable]
-  256 |   QUATERNION q;
+../Core/Src/main.cpp:263:14: warning: unused variable 'q' [-Wunused-variable]
+  263 |   QUATERNION q;
       |              ^
 ../Core/Src/main.cpp: In function 'void check_TWEbuf()':
-../Core/Src/main.cpp:613:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
-  613 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+../Core/Src/main.cpp:604:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  604 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
       |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
-../Core/Src/main.cpp:619:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
-  619 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+../Core/Src/main.cpp:610:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  610 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
       |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
-../Core/Src/main.cpp:620:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
-  620 |   if(check_buf_point==index){break;}
+../Core/Src/main.cpp:611:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  611 |   if(check_buf_point==index){break;}
       |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
@@ -24,11 +24,11 @@ Finished building target: Mother.elf
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  34464	    252	   2328	  37044	   90b4	Mother.elf
+  35032	    372	   2328	  37732	   9364	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
 
-23:47:55 Build Finished. 0 errors, 5 warnings. (took 1s.270ms)
+05:31:31 Build Finished. 0 errors, 5 warnings. (took 2s.148ms)
 

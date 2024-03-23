@@ -50,10 +50,10 @@ void LED::do_backRewrite(){
     NEOPIXEL->do_backRewrite();
 }
 
-void LED::set_under(int hue_of_back, int v){
+void LED::set_under(int hue_of_back){
     hue = hue_of_back;
     sat = 230;
-    val = v;
+    val = 8;
 }
 
 void LED::set_color(uint16_t pixel_num){

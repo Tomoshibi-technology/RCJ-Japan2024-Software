@@ -74,7 +74,7 @@ int goal_travel_y = 0;
 
 uint8_t Error = 0;
 
-uint8_t send_array[11];
+uint8_t send_array[10];
 
 double time;
 double saved_time = 0;
@@ -90,13 +90,9 @@ int mode, clock, hue;
 uint8_t array_num = 0;
 uint8_t past_array_num = 0;
 
-#define array_amount 20
+#define array_amount 10
 int coord_array[array_amount][3]={
-		{150,0,50},{250,0,50},{50,0,50},{250,0,50},{50,0,50},{150,0,50},
-		{150,40,50},{250,40,50},{50,40,50},{150,40,50},{150,0,50},{50,40,50},
-		{250,0,50},{50,0,50},{250,40,50},{50,40,50},{50,0,50},{250,0,50},
-		{250,40,50},{250,0,50}
-
+		{150,0,50},{250,0,50},{60,0,50},{250,0,50},{60,0,50},{160,0,50},{160,30,50},{250,30,50},{60,30,50},{60,0,50}
 };
 int c_x;
 /* USER CODE END PV */
@@ -116,7 +112,7 @@ static void MX_UART5_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h, uint8_t h2, uint8_t v){
+void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h, uint8_t h2){
 	send_array[0]=220;
 
 	if(cx - tx > 48+r){
@@ -130,7 +126,6 @@ void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h, uint8_t h2, uint8_t
 	tx += 5000; cx += 5000; cz += 5000;
 	uint8_t h_out = h/2.5;
 	uint8_t h_out2 = h2/2.5;
-	uint8_t v_out = v/2.5;
 	for(int i = 1; i <3 ;i++){
 		send_array[i] = tx%100;
 		tx = (int)tx/100;
@@ -148,8 +143,6 @@ void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h, uint8_t h2, uint8_t
 	send_array[8] = h_out;
 	if(h_out2 > 100){h_out2 = 100;}
 	send_array[9] = h_out2;
-	if(v_out > 100){v_out = 100;}
-	send_array[10] = v_out;
 }
 
 void check_TWEbuf();
@@ -167,8 +160,8 @@ void check_coord(){
 	//array外対応
 	if(array_num >= array_amount && mode <= 8){
 		go_speed = 50;
-		if(travel_x >250){goal_travel_x = 50;}
-		else if(travel_x <50){goal_travel_x = 250;}
+		if(travel_x >250){goal_travel_x = 65;}
+		else if(travel_x <65){goal_travel_x = 250;}
 	}else if(HAL_GPIO_ReadPin(START_GPIO_Port, START_Pin)==1 && mode >= 4 && mode <= 8){
 		go_speed = coord_array[array_num][2];
 	}else if(mode == 9){
@@ -285,14 +278,17 @@ int main(void)
 
 	//coordinate check----------------------
 	check_coord();
-	float size = 12.0+((-1.0)*travel_y*0.1);
-	set_array((-1)*travel_x, (-1)*126, 24, (int)size, (hue + 90)%250, hue, 21);
+	}else if(array_num>=8){
+		set_array((-1)*travel_x, (-1)*250, 24, 12+((-1)*travel_y*0.05), hue, (hue + 90)%250);
+	}else{
+		set_array((-1)*travel_x, (-1)*150, 24, 12+((-1)*travel_y*0.05), hue, (hue + 90)%250);
+	}
 //    set_array((-1)*travel_x, (-1)*0, 24, 12+((-1)*travel_y*0.05), 0, 120);
 
 	//send_data-----------------------------
 //
 	set_and_send_to_motor();
-	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 11, 100);
+	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 10, 100);
 
 	//Twelite
 	check_TWEbuf();

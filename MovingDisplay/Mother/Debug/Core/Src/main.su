@@ -1,17 +1,17 @@
-../Core/Src/main.cpp:115:6:void set_array(int, int, int, uint8_t, uint8_t, uint8_t)	40	static
-../Core/Src/main.cpp:152:6:void check_coord()	8	static
-../Core/Src/main.cpp:174:6:void set_and_send_to_motor()	8	static
-../Core/Src/main.cpp:192:5:int main()	240	static
-../Core/Src/main.cpp:319:6:void SystemClock_Config()	88	static
-../Core/Src/main.cpp:366:13:void MX_I2C1_Init()	8	static
-../Core/Src/main.cpp:400:13:void MX_TIM3_Init()	32	static
-../Core/Src/main.cpp:445:13:void MX_UART5_Init()	8	static
-../Core/Src/main.cpp:478:13:void MX_USART3_UART_Init()	8	static
-../Core/Src/main.cpp:511:13:void MX_USART6_UART_Init()	8	static
-../Core/Src/main.cpp:542:13:void MX_DMA_Init()	16	static
-../Core/Src/main.cpp:560:13:void MX_GPIO_Init()	48	static
-../Core/Src/main.cpp:600:6:void check_TWEbuf()	32	static
-../Core/Src/main.cpp:636:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
-../Core/Src/main.cpp:661:6:void Error_Handler()	4	static,ignoring_inline_asm
-../Core/Src/main.cpp:670:1:void __static_initialization_and_destruction_0(int, int)	16	static
-../Core/Src/main.cpp:670:1:cpp)	8	static
+../Core/Src/main.cpp:119:6:void set_array(int, int, int, uint8_t, uint8_t, uint8_t, uint8_t)	40	static
+../Core/Src/main.cpp:159:6:void check_coord()	8	static
+../Core/Src/main.cpp:181:6:void set_and_send_to_motor()	8	static
+../Core/Src/main.cpp:199:5:int main()	264	static
+../Core/Src/main.cpp:310:6:void SystemClock_Config()	88	static
+../Core/Src/main.cpp:357:13:void MX_I2C1_Init()	8	static
+../Core/Src/main.cpp:391:13:void MX_TIM3_Init()	32	static
+../Core/Src/main.cpp:436:13:void MX_UART5_Init()	8	static
+../Core/Src/main.cpp:469:13:void MX_USART3_UART_Init()	8	static
+../Core/Src/main.cpp:502:13:void MX_USART6_UART_Init()	8	static
+../Core/Src/main.cpp:533:13:void MX_DMA_Init()	16	static
+../Core/Src/main.cpp:551:13:void MX_GPIO_Init()	48	static
+../Core/Src/main.cpp:591:6:void check_TWEbuf()	32	static
+../Core/Src/main.cpp:627:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	16	static
+../Core/Src/main.cpp:652:6:void Error_Handler()	4	static,ignoring_inline_asm
+../Core/Src/main.cpp:661:1:void __static_initialization_and_destruction_0(int, int)	16	static
+../Core/Src/main.cpp:661:1:cpp)	8	static

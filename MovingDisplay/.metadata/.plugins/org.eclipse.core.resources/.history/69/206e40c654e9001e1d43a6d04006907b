@@ -34,11 +34,11 @@ void LED::show(int travel_x, int circle_x, int circle_z, int circle_r, int hue, 
     NEOPIXEL->show();
 }
 
-void LED::set_circle(int x, int z, int cx, int cz, int ro, int h, int v){
+void LED::set_circle(int x, int z, int cx, int cz, int ro, int h){
     float distance = (x-cx)*(x-cx)+(z-cz)*(z-cz);
     if(ro*ro>=distance){
 //        red = 10; green = 0; blue = 0;
-    	hue = h; sat = 240; val = v;
+    	hue = h; sat = 240; val = 20;
     }else{}
 }
 
@@ -50,10 +50,10 @@ void LED::do_backRewrite(){
     NEOPIXEL->do_backRewrite();
 }
 
-void LED::set_under(int hue_of_back, int v){
+void LED::set_under(int hue_of_back, int s){
     hue = hue_of_back;
-    sat = 230;
-    val = v;
+    sat = s;
+    val = 8;
 }
 
 void LED::set_color(uint16_t pixel_num){
