@@ -105,31 +105,42 @@ void draw() {
 
 	//Mode選ぶ
 	int mode;
+	int myHue = 0;
 	if(beat_count == 0){
 		mode = 0;
+		myHue = slider1;
 	}else if(beat_count <= 32){
 		mode = 1;
+		myHue = (beat_count*5 + 20)%255;
 	}else if(beat_count <= 80){
 		mode = 2;
+		myHue = 115;
 	}else if(beat_count <= 96){
 		mode = 3;
+		myHue = 134;
 	}else if(beat_count <= 161){
 		mode = 4;
-	}else if(beat_count <= 192){
+		myHue = 190;
+	}else if(beat_count <= 192){ // 一つ目のみんな同時
 		mode = 5;
+		myHue = 20;
 	}else if(beat_count <= 257){
 		mode = 6;
-	}else if(beat_count <= 321){
+		myHue = 160;
+	}else if(beat_count <= 321){ //全部
 		mode = 7;
+		myHue = beat_count%255;
 	}else if(beat_count <= 354){
 		mode = 8;
+		myHue = 140;
 	}else{
 		mode = 9;
+		myHue = 140;
 	}
 
 	// 色の調整
-	if(slider1 == 250){
-		slider1 = 251;
+	if(myHue == 250){
+		myHue = 251;
 	}
 
 	// 通信
@@ -138,7 +149,7 @@ void draw() {
 		myPort.write(mode+5); //1         
 		myPort.write(byte(raw_count/240 + 5)); //2
 		myPort.write(byte(raw_count%240 + 5)); //3
-		myPort.write(slider1); //4
+		myPort.write(myHue); //4
 	}
 
 
@@ -152,7 +163,7 @@ void draw() {
 		print("___");
 		print(raw_count);
 		print("___");
-		print(slider1);
+		print(myHue);
 		println("___");
 	}
 }
