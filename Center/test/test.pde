@@ -139,23 +139,22 @@ void draw() {
 		myPort.write(byte(raw_count/240 + 5)); //2
 		myPort.write(byte(raw_count%240 + 5)); //3
 		myPort.write(slider1); //4
+	}
 
+
+
+	if(myPort.available() > 0){
+		print(myPort.read());
+		print("______");
+	}
+	if(raw_count%20 == 0){
 		print(mode);
 		print("___");
 		print(raw_count);
 		print("___");
 		print(slider1);
-		print("___");
+		println("___");
 	}
-
-	if(myPort.available() > 0){
-		println(myPort.read());
-	}
-
-
-
-
-
 }
 
 
