@@ -74,8 +74,8 @@ int beat_count = 0;
 void draw() {
 
 
-	colorMode( HSB ); 
-	background(slider1,200,250); // 背景色をスライダーの値に変更
+	// colorMode( HSB ); 
+	// background(slider1,200,250); // 背景色をスライダーの値に変更
 
 
 	//　時間経過
@@ -85,7 +85,7 @@ void draw() {
 		startflg = true;
   }
 	if(startflg){
-    fill(color(255));
+    //fill(color(255));
 		int now_millis = millis() - start_millis;
 		if(pre_millis + beat_millis < now_millis){
 			if(raw_count%32 == 0){
@@ -99,9 +99,9 @@ void draw() {
 			raw_count++;
 		}
   }else{
-		fill(color(128));
+		//fill(color(128));
 	}
-  rect(670,100,20,20);
+  //rect(670,100,20,20);
 
 	//Mode選ぶ
 	int mode;
@@ -155,35 +155,38 @@ void draw() {
 
 
 	if(myPort.available() > 0){
-		print(myPort.read());
-		print("______");
+		// print(myPort.read());
+		// print("______");
 	}
 	if(raw_count%20 == 0){
-		print(mode);
-		print("___");
-		print(raw_count);
-		print("___");
-		print(myHue);
-		println("___");
+		// print(mode);
+		// print("___");
+		// print(raw_count);
+		// print("___");
+		// print(myHue);
+		// println("___");
 	}
 
 	//お絵描き
+
+	colorMode( HSB ); 
+	background(myHue,200,250); // 背景色をスライダーの値に変更
+
 	if(mode != 0){
 		// rect(0,0,1920,1080);
 		// colorMode(RGB, 255);
 		// background(0);
 		// fft.forward(in.mix);
 		
-		noStroke();
-		colorMode(HSB, 360, 100, 100, 255);
-		for(int i = 0; i < fft.specSize(); i++){
-			float hue = map(i, 0, fft.specSize(), 0, 360);
-			fill(hue, 100, 100, 10);
-			float radious = fft.getBand(i) * 5;
-			ellipse(width/2, height/2, radious * 2, radious * 2);
-		}
+		// noStroke();
+		// colorMode(HSB, 360, 100, 100, 255);
+		// for(int i = 0; i < fft.specSize(); i++){
+		// 	float hue = map(i, 0, fft.specSize(), 0, 360);
+		// 	fill(hue, 100, 100, 10);
+		// 	float radious = fft.getBand(i) * 5;
+		// 	ellipse(width/2, height/2, radious * 2, radious * 2);
+		// }
 	}
-
 }
 
 

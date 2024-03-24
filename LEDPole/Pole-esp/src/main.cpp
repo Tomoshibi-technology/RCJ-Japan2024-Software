@@ -91,6 +91,9 @@ void led_set(int tape_n, int num, int H, int S, int V);
 
  int finish_V=32;
  bool flg_beat = false;
+
+long music_n = 0;
+
 void loop() {
 	if(millis()-pre_10msec > 100){
 		pre_10msec = millis();
@@ -107,11 +110,17 @@ void loop() {
 	int mic_value = analogRead(35)-1000; //0-2500
 	// int mic_value = log10(analogRead(35)-1000);
 	mic_value = mic_value*0.4 + pre_mic_value*0.6;
-	int ledHigh = mic_value/22;
-	// Serial.print(mic_value);
-	// Serial.print("   ");
-	// Serial.println(ledHigh);
-
+	music_n++;
+	int ledHigh;
+	if((ID==1 || ID ==2) || (ID==7 || ID ==8)){
+		ledHigh = mic_value/22;
+	}else if(ID==3 || ID ==5){
+		ledHigh = 29 + 28*sin(music_n/15.0);
+	}else if(ID==4 || ID ==6){
+		ledHigh = 29 - 28*sin(music_n/15.0);
+	}
+	Serial.print("___");
+	Serial.println(ledHigh);
 
 	//　受信するよ 
 	ser_ctrl.read();
@@ -132,6 +141,7 @@ void loop() {
  		beat_count = 0;
  		mode4_n = 0;
  		mode5_time = 0;
+		finish_V=32;
  	}
  	if(raw_count > target_raw_count){
  		beat_count++;
@@ -155,10 +165,10 @@ void loop() {
  	//　modeごとに光らせる。
  	if(mode == 1){ //Poleメイン
  		led_set_all(0,10,5);
- 		led_set_high((beat_count-2)*2, ledHue,250,100);
+ 		led_set_high((beat_count-2)*2, ledHue,250,150);
  	}else if(mode == 2){ //Armメイン 
  		if(up_star_time==0)up_star_time = my_10msec;
- 		led_set_all(ledHue,150,3);
+ 		led_set_all(ledHue,100,10);
  	}else if(mode == 3){ //Poleメイン
  		//点滅して色回そう
  		int myHue;
@@ -170,9 +180,9 @@ void loop() {
  		if(beat_count%2 == 0){
  			myHue += 127;
  		}
- 		led_set_all(myHue+127, 150, 100);
+ 		led_set_all(myHue+127, 150, 150);
  	}else if(mode == 4){  //Movingメイン
- 		led_set_all(ledHue,150,3);
+ 		led_set_all(ledHue,100,10);
  		if((ID+mode4_n)%2 == 1){
  			if(up_star_time==0 && down_star_time == -10){
  				up_star_time = my_10msec;
@@ -192,31 +202,31 @@ void loop() {
  		}
  		int myheight = my_10msec - mode5_time;
  		for(int num=0; num<myheight; num++){
- 			led_set((num+beat_count)%6, num, ledHue,250,100);
+ 			led_set((num+beat_count)%6, num, ledHue,250,150);
  		}
  		for(int num=0; num<myheight-20; num++){
- 			led_set((num+2+my_10msec)%6, num, ledHue+85,250,100);
+ 			led_set((num+2+my_10msec)%6, num, ledHue+85,250,150);
  		}
  		for(int num=0; num<myheight-40; num++){
- 			led_set((num+4+my_10msec)%6, num, ledHue+170,250,100);
+ 			led_set((num+4+my_10msec)%6, num, ledHue+170,250,150);
  		}
 
  	}else if(mode == 6){ // ArmとPole
- 		led_set_all(0,10,5);
+ 		//led_set_all(0,10,5);
  		if(flg_10msec){
  			mode6_count++;
  		}
 
  		if(up_star_time==0 && ((193+ID==beat_count || 220+ID==beat_count)|| 240+ID==beat_count))up_star_time = my_10msec;
- 		led_set_all(ledHue,150,3);
+ 		led_set_all(ledHue,100,10);
 
  	}else if(mode == 7){ // 全部、手拍子フェーズ
  		led_set_all(0,15,5);
- 		led_set_high(ledHigh, ledHue, 250, 150);
+ 		led_set_high(ledHigh, ledHue, 250, 200);
  	}else if(mode == 8){ // 色消していく
  		if(flg_beat){
  			finish_V--;
- 			if(finish_V==3){
+ 			if(finish_V<5){
  				finish_V = 0;
  			}
  		}
@@ -224,21 +234,21 @@ void loop() {
 
 
  	}else if(mode == 9){
- 		led_set_all(0,15,0);
+ 		led_set_all(0,0,0);
  	}else{
- 		led_set_all(ledHue,250,100);
+ 		led_set_all(ledHue,220,150);
 	}
 
 
 	// 流れ星の処理
 	if(up_star_time > 0){
-		led_set_star(my_10msec- up_star_time, 50,200,100, false);
+		led_set_star(my_10msec- up_star_time, 50,200,250, false);
 	}
 	if(my_10msec-up_star_time > 63){
 		up_star_time = 0;
 	}
 	if(down_star_time > -5){
-		led_set_star(63 - (my_10msec-down_star_time), 50,200,100,true);
+		led_set_star(63 - (my_10msec-down_star_time), 50,200,250,true);
 	}
 	if(my_10msec-down_star_time > 67){
 		down_star_time = -10;
