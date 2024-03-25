@@ -142,6 +142,7 @@ void loop() {
  		mode4_n = 0;
  		mode5_time = 0;
 		finish_V=32;
+		music_n = 0;
  	}
  	if(raw_count > target_raw_count){
  		beat_count++;
@@ -168,7 +169,7 @@ void loop() {
  		led_set_high((beat_count-2)*2, ledHue,250,150);
  	}else if(mode == 2){ //Armメイン 
  		if(up_star_time==0)up_star_time = my_10msec;
- 		led_set_all(ledHue,100,10);
+ 		led_set_all(ledHue,200,20);
  	}else if(mode == 3){ //Poleメイン
  		//点滅して色回そう
  		int myHue;
@@ -182,7 +183,7 @@ void loop() {
  		}
  		led_set_all(myHue+127, 150, 150);
  	}else if(mode == 4){  //Movingメイン
- 		led_set_all(ledHue,100,10);
+ 		led_set_all(ledHue,200,20);
  		if((ID+mode4_n)%2 == 1){
  			if(up_star_time==0 && down_star_time == -10){
  				up_star_time = my_10msec;
@@ -196,7 +197,7 @@ void loop() {
  		}
 
  	}else if(mode == 5){ //みんなで
- 		led_set_all(0,10,5);
+ 		led_set_all(0,15,5);
  		if(mode5_time == 0){
  			mode5_time = my_10msec;
  		}
@@ -218,7 +219,7 @@ void loop() {
  		}
 
  		if(up_star_time==0 && ((193+ID==beat_count || 220+ID==beat_count)|| 240+ID==beat_count))up_star_time = my_10msec;
- 		led_set_all(ledHue,100,10);
+ 		led_set_all(ledHue,200,20);
 
  	}else if(mode == 7){ // 全部、手拍子フェーズ
  		led_set_all(0,15,5);
