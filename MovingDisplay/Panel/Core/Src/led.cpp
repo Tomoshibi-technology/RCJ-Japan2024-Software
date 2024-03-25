@@ -19,14 +19,14 @@ void LED::init(uint8_t panel_id){
     else if(panel_id==8){PANEL_START_X = 32; PANEL_START_Z = 32;}
 }
 
-void LED::show(int travel_x, int circle_x, int circle_z, int circle_r, int hue){
+void LED::show(int travel_x, int circle_x, int circle_z, int circle_r, int hue, int hue_of_back){
     NEOPIXEL->clear();
     for(int px=0; px<16; px++){
         for(int pz=0; pz<16; pz++){
             int x = px + PANEL_START_X + travel_x;
             int z = pz + PANEL_START_Z;
 
-            set_under();
+            set_under(hue_of_back);
             set_circle(x, z, circle_x, circle_z, circle_r, hue);
             set_color(change_coord_to_num(px, pz));
         }
@@ -34,11 +34,11 @@ void LED::show(int travel_x, int circle_x, int circle_z, int circle_r, int hue){
     NEOPIXEL->show();
 }
 
-void LED::set_circle(int x, int z, int cx, int cz, int ro, int h){
+void LED::set_circle(int x, int z, int cx, int cz, int ro, int h, int v){
     float distance = (x-cx)*(x-cx)+(z-cz)*(z-cz);
     if(ro*ro>=distance){
 //        red = 10; green = 0; blue = 0;
-    	hue = h; sat = 240; val = 20;
+    	hue = h; sat = 240; val = v;
     }else{}
 }
 
@@ -50,10 +50,10 @@ void LED::do_backRewrite(){
     NEOPIXEL->do_backRewrite();
 }
 
-void LED::set_under(){
-    hue = 50;
+void LED::set_under(int hue_of_back, int v){
+    hue = hue_of_back;
     sat = 230;
-    val = 10;
+    val = v;
 }
 
 void LED::set_color(uint16_t pixel_num){

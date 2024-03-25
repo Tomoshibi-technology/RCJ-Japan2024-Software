@@ -18,8 +18,8 @@ class LED{
     void do_forwardRewrite();
     void do_backRewrite();
     int change_coord_to_num(int px, int pz);;
-    void set_under();
-    void set_circle(int x, int z, int cx, int cz, int ro, int h);
+    void set_under(int hue_of_back, int v);
+    void set_circle(int x, int z, int cx, int cz, int ro, int h, int v);
     void set_color(uint16_t pixel_num);
-    void show(int travel_x, int circle_x, int circle_z, int circle_r, int hue);
+    void show(int travel_x, int circle_x, int circle_z, int circle_r, int hue, int hue_of_back, int v);
 };

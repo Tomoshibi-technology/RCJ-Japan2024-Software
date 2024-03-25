@@ -1,9 +1,9 @@
 ../Core/Src/led.cpp:3:1:LED::LED(WS2812*)	16	static
 ../Core/Src/led.cpp:7:6:void LED::init(uint8_t)	16	static
-../Core/Src/led.cpp:22:6:void LED::show(int, int, int, int, int)	64	static
+../Core/Src/led.cpp:22:6:void LED::show(int, int, int, int, int, int)	64	static
 ../Core/Src/led.cpp:37:6:void LED::set_circle(int, int, int, int, int, int)	32	static
 ../Core/Src/led.cpp:45:6:void LED::do_forwardRewrite()	16	static
 ../Core/Src/led.cpp:49:6:void LED::do_backRewrite()	16	static
-../Core/Src/led.cpp:53:6:void LED::set_under()	16	static
+../Core/Src/led.cpp:53:6:void LED::set_under(int)	16	static
 ../Core/Src/led.cpp:59:6:void LED::set_color(uint16_t)	32	static
 ../Core/Src/led.cpp:64:5:int LED::change_coord_to_num(int, int)	32	static

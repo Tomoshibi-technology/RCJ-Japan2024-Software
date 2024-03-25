@@ -1,502 +1,216 @@
-09:39:18 **** Incremental Build of configuration Debug for project Mother ****
+04:25:23 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp: In function 'void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)':
-../Core/Src/main.cpp:122:41: error: invalid type argument of unary '*' (have 'int')
-  122 |   cz = syoshoku * time - (9.8/2) * time**2 + 40;
-      |                                         ^~
-../Core/Src/main.cpp:124:6: error: expected '(' before 'cz'
-  124 |   if cz <= 5:
-      |      ^~
-      |      (
-../Core/Src/main.cpp:126:3: error: expected '}' before 'else'
-  126 |   else:
-      |   ^~~~
-../Core/Src/main.cpp:120:24: note: to match this '{'
-  120 |     if (htim == &htim3){
-      |                        ^
-../Core/Src/main.cpp:126:7: error: expected primary-expression before ':' token
-  126 |   else:
-      |       ^
-../Core/Src/main.cpp: At global scope:
-../Core/Src/main.cpp:133:1: error: expected declaration before '}' token
-  133 | }
-      | ^
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:194:14: warning: unused variable 'q' [-Wunused-variable]
-  194 |   QUATERNION q;
+../Core/Src/main.cpp:256:14: warning: unused variable 'q' [-Wunused-variable]
+  256 |   QUATERNION q;
       |              ^
-make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-09:39:59 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:196:14: warning: unused variable 'q' [-Wunused-variable]
-  196 |   QUATERNION q;
-      |              ^
+../Core/Src/main.cpp: In function 'void check_TWEbuf()':
+../Core/Src/main.cpp:596:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  596 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:602:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  602 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:603:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  603 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
  
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  30576	    132	   2024	  32732	   7fdc	Mother.elf
+  34944	    252	   2328	  37524	   9294	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
-09:42:30 **** Incremental Build of configuration Debug for project Mother ****
+04:47:03 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:196:14: warning: unused variable 'q' [-Wunused-variable]
-  196 |   QUATERNION q;
+../Core/Src/main.cpp:260:14: warning: unused variable 'q' [-Wunused-variable]
+  260 |   QUATERNION q;
       |              ^
+../Core/Src/main.cpp: In function 'void check_TWEbuf()':
+../Core/Src/main.cpp:600:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  600 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:606:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  606 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:607:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  607 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
  
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  30328	    132	   1992	  32452	   7ec4	Mother.elf
+  34944	    360	   2332	  37636	   9304	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
-09:43:09 **** Incremental Build of configuration Debug for project Mother ****
+05:11:31 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:196:14: warning: unused variable 'q' [-Wunused-variable]
-  196 |   QUATERNION q;
+../Core/Src/main.cpp:260:14: warning: unused variable 'q' [-Wunused-variable]
+  260 |   QUATERNION q;
       |              ^
+../Core/Src/main.cpp: In function 'void check_TWEbuf()':
+../Core/Src/main.cpp:600:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  600 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:606:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  606 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:607:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  607 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
  
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  30328	    132	   1992	  32452	   7ec4	Mother.elf
+  34944	    372	   2328	  37644	   930c	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
-09:53:07 **** Incremental Build of configuration Debug for project Mother ****
+05:16:56 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:196:14: warning: unused variable 'q' [-Wunused-variable]
-  196 |   QUATERNION q;
+../Core/Src/main.cpp:260:14: warning: unused variable 'q' [-Wunused-variable]
+  260 |   QUATERNION q;
       |              ^
+../Core/Src/main.cpp: In function 'void check_TWEbuf()':
+../Core/Src/main.cpp:601:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  601 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:607:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  607 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:608:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  608 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
  
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  30336	    132	   1992	  32460	   7ecc	Mother.elf
+  34960	    372	   2328	  37660	   931c	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
-10:38:11 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-size   Mother.elf 
-   text	   data	    bss	    dec	    hex	filename
-  30336	    132	   1992	  32460	   7ecc	Mother.elf
-Finished building: default.size.stdout
- 
-11:37:12 **** Incremental Build of configuration Debug for project Mother ****
+05:18:27 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:196:14: warning: unused variable 'q' [-Wunused-variable]
-  196 |   QUATERNION q;
+../Core/Src/main.cpp:260:14: warning: unused variable 'q' [-Wunused-variable]
+  260 |   QUATERNION q;
       |              ^
+../Core/Src/main.cpp: In function 'void check_TWEbuf()':
+../Core/Src/main.cpp:601:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  601 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:607:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  607 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:608:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  608 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
  
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  30336	    132	   1992	  32460	   7ecc	Mother.elf
+  34968	    372	   2328	  37668	   9324	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
-17:11:30 **** Incremental Build of configuration Debug for project Mother ****
+05:27:23 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
-arm-none-eabi-g++ "../Core/Src/m_transmit.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/m_transmit.d" -MT"Core/Src/m_transmit.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/m_transmit.o"
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:198:14: warning: unused variable 'q' [-Wunused-variable]
-  198 |   QUATERNION q;
+../Core/Src/main.cpp:263:14: warning: unused variable 'q' [-Wunused-variable]
+  263 |   QUATERNION q;
       |              ^
+../Core/Src/main.cpp: In function 'void check_TWEbuf()':
+../Core/Src/main.cpp:604:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  604 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:610:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  610 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:611:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  611 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
  
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  30584	    132	   2000	  32716	   7fcc	Mother.elf
+  35032	    372	   2328	  37732	   9364	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list
  
-17:12:17 **** Incremental Build of configuration Debug for project Mother ****
+05:31:29 **** Incremental Build of configuration Debug for project Mother ****
 make -j8 all 
 arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.cpp:85:19: warning: built-in function 'index' declared as non-function [-Wbuiltin-declaration-mismatch]
+   85 | volatile uint32_t index;
+      |                   ^~~~~
 ../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:198:14: warning: unused variable 'q' [-Wunused-variable]
-  198 |   QUATERNION q;
+../Core/Src/main.cpp:263:14: warning: unused variable 'q' [-Wunused-variable]
+  263 |   QUATERNION q;
       |              ^
+../Core/Src/main.cpp: In function 'void check_TWEbuf()':
+../Core/Src/main.cpp:604:22: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  604 |     if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+      |        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:610:21: warning: comparison of integer expressions of different signedness: 'int' and 'unsigned int' [-Wsign-compare]
+  610 |   if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+      |      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.cpp:611:21: warning: comparison of integer expressions of different signedness: 'int' and 'volatile uint32_t' {aka 'volatile long unsigned int'} [-Wsign-compare]
+  611 |   if(check_buf_point==index){break;}
+      |      ~~~~~~~~~~~~~~~^~~~~~~
 arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: Mother.elf
  
 arm-none-eabi-size   Mother.elf 
 arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
    text	   data	    bss	    dec	    hex	filename
-  30592	    132	   2000	  32724	   7fd4	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:13:10 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:198:14: warning: unused variable 'q' [-Wunused-variable]
-  198 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30584	    132	   2000	  32716	   7fcc	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:31:51 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:248:4: error: 'k' was not declared in this scope
-  248 |    k=k+0.1;
-      |    ^
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-17:32:15 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30440	    168	   1996	  32604	   7f5c	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:39:54 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30592	    168	   1996	  32756	   7ff4	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:41:53 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30592	    168	   1996	  32756	   7ff4	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:43:28 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30496	    168	   1996	  32660	   7f94	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:44:37 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-size   Mother.elf 
-   text	   data	    bss	    dec	    hex	filename
-  30496	    168	   1996	  32660	   7f94	Mother.elf
-Finished building: default.size.stdout
- 
-17:49:08 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30496	    168	   1996	  32660	   7f94	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:51:12 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:166:1: error: no match for 'operator*' (operand type is 'HAL_StatusTypeDef')
-  166 | *  HAL_Init();
-      | ^~~~~~~~~~~~~
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-make: *** [Core/Src/subdir.mk:47: Core/Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-17:51:57 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30504	    168	   1996	  32668	   7f9c	Mother.elf
-Finished building: default.size.stdout
- 
-Finished building: Mother.list
- 
-17:54:48 **** Incremental Build of configuration Debug for project Mother ****
-make -j8 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.cpp:84:4: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |    ^~~
-../Core/Src/main.cpp:84:10: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |          ^~
-../Core/Src/main.cpp:84:15: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |               ^~
-../Core/Src/main.cpp:84:20: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                    ^~
-../Core/Src/main.cpp:84:25: warning: left operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                         ^
-../Core/Src/main.cpp:84:29: warning: right operand of comma operator has no effect [-Wunused-value]
-   84 |   (100,0,50),(50,0,50),(0,0,0)
-      |                             ^
-../Core/Src/main.cpp: In function 'int main()':
-../Core/Src/main.cpp:213:14: warning: unused variable 'q' [-Wunused-variable]
-  213 |   QUATERNION q;
-      |              ^
-arm-none-eabi-g++ -o "Mother.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\robot\Japan2024-Software\MovingDisplay\Mother\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Mother.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
-Finished building target: Mother.elf
- 
-arm-none-eabi-size   Mother.elf 
-arm-none-eabi-objdump -h -S  Mother.elf  > "Mother.list"
-   text	   data	    bss	    dec	    hex	filename
-  30496	    168	   1996	  32660	   7f94	Mother.elf
+  35032	    372	   2328	  37732	   9364	Mother.elf
 Finished building: default.size.stdout
  
 Finished building: Mother.list

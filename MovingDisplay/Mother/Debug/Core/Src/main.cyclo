@@ -1,14 +1,17 @@
-main.cpp:103:6:void set_array(int, int, int, uint8_t, uint8_t)	5
-main.cpp:124:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	1
-main.cpp:143:6:void check_coord()	3
-main.cpp:157:5:int main()	8
-main.cpp:263:6:void SystemClock_Config()	3
-main.cpp:310:13:void MX_I2C1_Init()	2
-main.cpp:344:13:void MX_TIM3_Init()	4
-main.cpp:389:13:void MX_USART3_UART_Init()	2
-main.cpp:422:13:void MX_USART6_UART_Init()	2
-main.cpp:455:13:void MX_GPIO_Init()	1
-main.cpp:500:6:void Error_Handler()	1
-cmath:155:5:constexpr typename __gnu_cxx::__promote_2<_Tp, _Up>::__type std::atan2(_Tp, _Up) [with _Tp = int; _Up = int]	1
-main.cpp:509:1:void __static_initialization_and_destruction_0(int, int)	3
-main.cpp:509:1:cpp)	1
+main.cpp:119:6:void set_array(int, int, int, uint8_t, uint8_t, uint8_t, uint8_t)	9
+main.cpp:159:6:void check_coord()	15
+main.cpp:181:6:void set_and_send_to_motor()	1
+main.cpp:199:5:int main()	5
+main.cpp:310:6:void SystemClock_Config()	3
+main.cpp:357:13:void MX_I2C1_Init()	2
+main.cpp:391:13:void MX_TIM3_Init()	4
+main.cpp:436:13:void MX_UART5_Init()	2
+main.cpp:469:13:void MX_USART3_UART_Init()	2
+main.cpp:502:13:void MX_USART6_UART_Init()	2
+main.cpp:533:13:void MX_DMA_Init()	1
+main.cpp:551:13:void MX_GPIO_Init()	1
+main.cpp:591:6:void check_TWEbuf()	8
+main.cpp:627:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	1
+main.cpp:652:6:void Error_Handler()	1
+main.cpp:661:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:661:1:cpp)	1

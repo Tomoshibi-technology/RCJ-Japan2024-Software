@@ -47,8 +47,10 @@ I2C_HandleTypeDef hi2c1;
 
 TIM_HandleTypeDef htim3;
 
+UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart3;
 UART_HandleTypeDef huart6;
+DMA_HandleTypeDef hdma_uart5_rx;
 
 /* USER CODE BEGIN PV */
 int travel_x, xf;
@@ -72,7 +74,7 @@ int goal_travel_y = 0;
 
 uint8_t Error = 0;
 
-uint8_t send_array[9];
+uint8_t send_array[11];
 
 double time;
 double saved_time = 0;
@@ -80,30 +82,55 @@ int cz=0;
 double syoshoku = 0;
 double lastv = 0;
 
-int coord_array[3][3]={
-		(100,0,50),(50,0,50),(0,0,0)
-};
-int array_num = 0;
+volatile uint32_t index;
+uint8_t rxBuf[128];
+int rcvBuf[4], readData;
 
+int mode, clock, hue;
+uint8_t array_num = 0;
+uint8_t past_array_num = 0;
+
+#define array_amount 20
+int coord_array[array_amount][3]={
+		{150,0,50},{250,0,50},{50,0,50},{250,0,50},{50,0,50},{150,0,50},
+		{150,40,50},{250,40,50},{50,40,50},{150,40,50},{150,0,50},{50,40,50},
+		{250,0,50},{50,0,50},{250,40,50},{50,40,50},{50,0,50},{250,0,50},
+		{250,40,50},{250,0,50}
+
+};
+int c_x;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_USART6_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_UART5_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h){
+void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h, uint8_t h2, uint8_t v){
 	send_array[0]=220;
+
+	if(cx - tx > 48+r){
+		cx = cx -((48*2) - (r*2)+1);
+	}else if(cx - tx < -(48-r)){
+		cx = cx + ((48*2) + (r*2)-1);
+	}
+
+	c_x = cx;
+
 	tx += 5000; cx += 5000; cz += 5000;
 	uint8_t h_out = h/2.5;
+	uint8_t h_out2 = h2/2.5;
+	uint8_t v_out = v/2.5;
 	for(int i = 1; i <3 ;i++){
 		send_array[i] = tx%100;
 		tx = (int)tx/100;
@@ -119,33 +146,48 @@ void set_array(int tx, int cx, int cz, uint8_t r, uint8_t h){
 	send_array[7] = r;
 	if(h_out > 100){h_out = 100;}
 	send_array[8] = h_out;
+	if(h_out2 > 100){h_out2 = 100;}
+	send_array[9] = h_out2;
+	if(v_out > 100){v_out = 100;}
+	send_array[10] = v_out;
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-//    if (htim == &htim3){
-//    	time += 0.02;
-//		cz = syoshoku * time - (9.8/2) * time*time + 40;
-//
-//		if (cz <= 5){
-//			syoshoku = -lastv;
-//		}
-//		else{
-//			lastv = syoshoku + 9.8 * time;
-//		}
-//
-//
-//    	set_array(0, (-1)*-10, cz, 5, 200);
-//    	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 9, 100);
-//    }
-}
+void check_TWEbuf();
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 
 void check_coord(){
-	if(travel_x == coord_array[array_num][0] && travel_y == coord_array[array_num][1]){
-		goal_travel_x = coord_array[array_num+1][0];
-		goal_travel_y = coord_array[array_num+1][1];
-		array_num ++;
+	if(travel_x > coord_array[array_num][0]-4 && travel_x < coord_array[array_num][0]+4 &&travel_y > coord_array[array_num][1]-4 &&travel_y < coord_array[array_num][1]+4){
+		if(array_num < array_amount){
+			array_num += 1 ;
+		}
+		goal_travel_x = coord_array[array_num][0];
+		goal_travel_y = coord_array[array_num][1];
 	}
+	//array外対応
+	if(array_num >= array_amount && mode <= 8){
+		go_speed = 50;
+		if(travel_x >250){goal_travel_x = 50;}
+		else if(travel_x <50){goal_travel_x = 250;}
+	}else if(HAL_GPIO_ReadPin(START_GPIO_Port, START_Pin)==1 && mode >= 4 && mode <= 8){
+		go_speed = coord_array[array_num][2];
+	}else if(mode == 9){
+		go_speed = 0;
+	}else{
+		go_speed = 0;
+	}
+}
+
+void set_and_send_to_motor(){
+	motor_A.calcurate(rotate, go_degree, go_speed);
+	motor_A.set_array(Buf);
+	motor_B.calcurate(rotate, go_degree, go_speed);
+	motor_B.set_array(Buf);
+	motor_C.calcurate(rotate, go_degree, go_speed);
+	motor_C.set_array(Buf);
+	motor_D.calcurate(rotate, go_degree, go_speed);
+	motor_D.set_array(Buf);
+	HAL_UART_Transmit(&huart6, (uint8_t*)&Buf, 12, 5);
 }
 
 /* USER CODE END 0 */
@@ -178,12 +220,16 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART6_UART_Init();
   MX_USART3_UART_Init();
   MX_I2C1_Init();
   MX_TIM3_Init();
+  MX_UART5_Init();
   /* USER CODE BEGIN 2 */
+
   HAL_Delay(1000);
+
   while (!ready) {
     if (HAL_I2C_IsDeviceReady(&hi2c1, 0x28<< 1, 10, 1000) == HAL_OK) {
       ready = 1;
@@ -201,57 +247,58 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim3);
 
+  HAL_UART_Receive_DMA(&huart5, rxBuf, sizeof(rxBuf));
+
   goal_travel_x = coord_array[0][0];
   goal_travel_y = coord_array[0][1];
+  go_speed = coord_array[0][2];
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   unsigned char address = 0x28;
   BNO055 bno055(hi2c1,address);
   QUATERNION q;
   EULAR e;
+
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	if(HAL_GPIO_ReadPin(START_GPIO_Port, START_Pin)==1){go_speed = 50;
-	}else{go_speed = 0;}
 
+	//odometery-----------------------------
     travel_x = -1*odom1.get_travel() - xf;
     travel_y = -1*odom2.get_travel() - yf;
 
+    //bno055--------------------------------
     e = bno055.get_eular();
     rotate = -1*(e.z/3.1415)*180;
     rotate = (int)rotate;
 
-    if(travel_x>200){
-    	goal_travel_x = 0;
-    }else if(travel_x <=0){
-    	goal_travel_x = 200;
-    }
+    //direction-----------------------------
+    go_degree = atan2((double)goal_travel_x - (double)travel_x, (double)goal_travel_y -(double)(travel_y) )/ PI*180;
 
-    go_degree = atan2(goal_travel_x - travel_x, -(travel_y) )/ PI*180;
+    //prepare for transmition---------------
 
-    motor_A.calcurate(rotate, go_degree, go_speed);
-	  motor_A.set_array(Buf);
-	  motor_B.calcurate(rotate, go_degree, go_speed);
-	  motor_B.set_array(Buf);
-	  motor_C.calcurate(rotate, go_degree, go_speed);
-	  motor_C.set_array(Buf);
-	  motor_D.calcurate(rotate, go_degree, go_speed);
-	  motor_D.set_array(Buf);
+	//coordinate check----------------------
+	check_coord();
+	float size = 12.0+((-1.0)*travel_y*0.1);
+	set_array((-1)*travel_x, (-1)*126, 24, (int)size, (hue + 90)%250, hue, 21);
+//    set_array((-1)*travel_x, (-1)*0, 24, 12+((-1)*travel_y*0.05), 0, 120);
 
-//	  check_coord();
+	//send_data-----------------------------
+//
+	set_and_send_to_motor();
+	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 11, 100);
 
-	  set_array((-1)*travel_x, (-1)*50, 24, 12, 0);
+	//Twelite
+	check_TWEbuf();
 
-
-	  HAL_UART_Transmit(&huart6, (uint8_t*)&Buf, 12, 100);
-	  HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 9, 100);
-
+	//
+	past_array_num = array_num;
   }
   /* USER CODE END 3 */
 }
@@ -382,6 +429,39 @@ static void MX_TIM3_Init(void)
 }
 
 /**
+  * @brief UART5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_UART5_Init(void)
+{
+
+  /* USER CODE BEGIN UART5_Init 0 */
+
+  /* USER CODE END UART5_Init 0 */
+
+  /* USER CODE BEGIN UART5_Init 1 */
+
+  /* USER CODE END UART5_Init 1 */
+  huart5.Instance = UART5;
+  huart5.Init.BaudRate = 115200;
+  huart5.Init.WordLength = UART_WORDLENGTH_8B;
+  huart5.Init.StopBits = UART_STOPBITS_1;
+  huart5.Init.Parity = UART_PARITY_NONE;
+  huart5.Init.Mode = UART_MODE_TX_RX;
+  huart5.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart5.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN UART5_Init 2 */
+
+  /* USER CODE END UART5_Init 2 */
+
+}
+
+/**
   * @brief USART3 Initialization Function
   * @param None
   * @retval None
@@ -448,6 +528,22 @@ static void MX_USART6_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -462,6 +558,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
@@ -490,6 +587,61 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void check_TWEbuf(){
+	index = huart5.hdmarx->Instance->NDTR;//バッファー残容量
+ 	index = sizeof(rxBuf) - index;//最新の受信データ位置
+
+ 	int check_buf_point = index - 10;
+ 	if(check_buf_point < 0){check_buf_point = check_buf_point + sizeof(rxBuf);}
+ 	//読み込み済みデータ位置より最新の受信データ位置が前にある時(バッファー内で受信データが一周してた場合)値を補正
+
+	while(1){
+		readData = rxBuf[check_buf_point];
+		if(readData == 250){
+			for(int i=1; i<5; i++){
+				int read_buf_point = check_buf_point + i;
+				if(read_buf_point>sizeof(rxBuf)-1){read_buf_point = read_buf_point - sizeof(rxBuf);}
+				rcvBuf[i-1] = rxBuf[read_buf_point];
+			}
+			break;
+		}
+		check_buf_point++;
+		if(check_buf_point>sizeof(rxBuf)-1){check_buf_point = check_buf_point - sizeof(rxBuf);}
+		if(check_buf_point==index){break;}
+	}
+
+ 	mode = rcvBuf[0]-5;
+
+	clock = 0;
+ 	int hyaku = 1;
+	for(int i = 2; i >=1 ; i--){
+		clock = clock + ((rcvBuf[i]-5)*hyaku);
+		hyaku = hyaku*240;
+	}
+
+	hue = rcvBuf[3];
+
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+//    if (htim == &htim3){
+//    	time += 0.02;
+//		cz = syoshoku * time - (9.8/2) * time*time + 40;
+//
+//		if (cz <= 5){
+//			syoshoku = -1 * lastv;
+//		}
+//		else{
+//			lastv = syoshoku + 9.8 * time;
+//		}
+//
+//
+//    	set_array(0, (-1)*-10, cz, 5, 200);
+//    	HAL_UART_Transmit(&huart3,(uint8_t*)&send_array, 9, 100);
+//    }
+}
 
 /* USER CODE END 4 */
 
