@@ -42,7 +42,12 @@ void setup() {
 	// control_init();
 	//ーーーーーまじでーーーーー
 
-	pinMode(PC11,INPUT); // 下のスライド
+	// pinMode(PC11,INPUT); // 下のスライド
+
+	pinMode(PA5,OUTPUT);
+	pinMode(PB2,OUTPUT);
+	digitalWrite(PA5,HIGH);
+	digitalWrite(PB2,HIGH);
 }
 
 unsigned long loop_timer = 10000;
@@ -72,6 +77,7 @@ uint32_t mycount = 0;
 // 	{0x2,1},{0x1,1},{0x0,2},{0xF,2}
 // };
 
+bool led_flg = 0;
 
 void loop() {
 	//ーーーこれは必須ーーーーー
@@ -85,8 +91,10 @@ void loop() {
 	if(sec_timer+250 < millis()){
 		sec_timer = millis();
 		mycount++;
+		led_flg = !led_flg;
 		// PC.printf("count: %08d\n", mycount);
 	}
+	digitalWrite(PA5,led_flg);
 
 	uint8_t send_data[12] = {0,0, 100,0xF,40,50,60,70,80,90,100,110};
 	send_data[0] = mycount%255;
