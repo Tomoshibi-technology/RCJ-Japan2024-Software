@@ -122,17 +122,18 @@ void exe_motor(int8_t inst_speed){
 		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
 		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, inst_speed * -1);
 	}
-	if(inst_speed == 0){
-		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
-		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
-	}
+//	if(inst_speed == 0){
+//		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, 0);
+//		__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0);
+//	}
 	  HAL_Delay(10);
 }
 void DMA_read(){
 	index_len = huart2.hdmarx->Instance->CNDTR;
 	index_len = sizeof(rxBuf) - index_len;
-	uint16_t search = index_len - 11;
-	if(search > 0 && search < 251){
+	int16_t search = index_len - 11;
+	if(search < 0){
+		search += sizeof(rxBuf);
 		while(1){
 			if(rxBuf[search] == 250){
 				rcvData[0] = rxBuf[search + 1];
@@ -146,7 +147,9 @@ void DMA_read(){
 				break;
 			}
 			search++;
-		}
+			if(search >= sizeof(rxBuf)){
+				search -= sizeof(rxBuf);
+			}
 	}
 }
 uint64_t readCounter(){
@@ -361,7 +364,7 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 16-1;
+  htim1.Init.Prescaler = 128-1;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim1.Init.Period = 128-1;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

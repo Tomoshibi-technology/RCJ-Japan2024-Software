@@ -146,7 +146,7 @@ int main(void)
 	  servo0.exe_servo(degree_position);
 	  servo1.exe_servo(degree_position / 2 + 90);
 	  servo2.exe_servo(degree_position);
-	  servo3.exe_servo(degree_position);
+	  servo3.exe_servo(degree_position / 4 + 100);
 
 
 

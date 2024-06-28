@@ -5,17 +5,17 @@ main.cpp:164:6:void transmit(uint16_t, uint8_t)	1
 main.cpp:168:6:void check_buf()	7
 main.cpp:198:6:void check_battery()	3
 main.cpp:228:5:int main()	16
-main.cpp:360:6:void SystemClock_Config()	3
-main.cpp:407:13:void MX_ADC1_Init()	3
-main.cpp:459:13:void MX_I2C1_Init()	2
-main.cpp:493:13:void MX_TIM1_Init()	4
-main.cpp:539:13:void MX_TIM3_Init()	7
-main.cpp:603:13:void MX_UART5_Init()	2
-main.cpp:636:13:void MX_USART2_UART_Init()	2
-main.cpp:669:13:void MX_USART3_UART_Init()	2
-main.cpp:702:13:void MX_USART6_UART_Init()	2
-main.cpp:733:13:void MX_DMA_Init()	1
-main.cpp:760:13:void MX_GPIO_Init()	1
-main.cpp:801:6:void Error_Handler()	1
-main.cpp:810:1:void __static_initialization_and_destruction_0(int, int)	3
-main.cpp:810:1:cpp)	1
+main.cpp:363:6:void SystemClock_Config()	3
+main.cpp:410:13:void MX_ADC1_Init()	3
+main.cpp:462:13:void MX_I2C1_Init()	2
+main.cpp:496:13:void MX_TIM1_Init()	4
+main.cpp:542:13:void MX_TIM3_Init()	7
+main.cpp:606:13:void MX_UART5_Init()	2
+main.cpp:639:13:void MX_USART2_UART_Init()	2
+main.cpp:672:13:void MX_USART3_UART_Init()	2
+main.cpp:705:13:void MX_USART6_UART_Init()	2
+main.cpp:736:13:void MX_DMA_Init()	1
+main.cpp:763:13:void MX_GPIO_Init()	1
+main.cpp:804:6:void Error_Handler()	1
+main.cpp:813:1:void __static_initialization_and_destruction_0(int, int)	3
+main.cpp:813:1:cpp)	1
