@@ -2,7 +2,7 @@
 ロボカップジュニア・ジャパンオープン2024名古屋に出場した際のプログラムです
 
 ## コードの見方
-主な実装は`RCJ-Japan2024-Software/.../.../Core/Inc`にあるヘッダファイルと、`Core/Src`にあるソースファイルにあります。その他のファイルにはピン割り当て、プロジェクト設定、ビルド関連が含まれます。 <br> 例）`RCJ-Japan2024-Software/MovingDisplay/Odometry/Core/Inc/as5600.h`
+主な実装は`RCJ-Japan2024-Software/.../.../Core/Inc`にあるヘッダファイルと、`Core/Src`にあるソースファイルにあります。その他のファイルにはピン割り当て、プロジェクト設定、ビルド関連が含まれています。 <br> 例）`RCJ-Japan2024-Software/MovingDisplay/Odometry/Core/Inc/as5600.h`
 
 ## フォルダ構成・役割
 - `Center/` : パフォーマンスを統括するPC用プログラム
